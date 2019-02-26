@@ -1,0 +1,132 @@
+%% +++++ Definition of Colors ++++++
+\definecolor{lightblue}{rgb}{0.145,0.6666,1} % Defines the color used for content box headers
+\definecolor{darkred}{rgb}{.65,0,0}
+\definecolor{darkgreen}{rgb}{0,0.65,0}
+% \definecolor{frameborder}{rgb}{0.035,0.313,0.62}
+% \definecolor{lightblue}{rgb}{.5,0,0}
+\definecolor{daedalusblue}{RGB}{0,80,160}
+\definecolor{lightblue}{RGB}{215,224,249}
+\definecolor{lightgreen}{RGB}{224,249,215}
+\definecolor{grey}{rgb}{.5,.5,.5}
+
+%% +++++ Color Style ++++++
+\definecolorstyle{Daedalus}{
+	\definecolor{colorOne}{named}{lightblue}
+	\definecolor{colorTwo}{named}{yellow}
+	\definecolor{colorThree}{named}{daedalusblue}
+}{
+	% Background Colors
+	\colorlet{backgroundcolor}{white}
+	\colorlet{framecolor}{black}
+	\colorlet{frameborder}{colorThree!80}
+	% Title Colors
+	\colorlet{titlefgcolor}{colorThree}
+	\colorlet{titlebgcolor}{colorOne}
+	% Block Colors
+	\colorlet{blocktitlebgcolor}{colorThree!80}
+	\colorlet{blocktitlefgcolor}{white}
+	\colorlet{blockbodybgcolor}{white}
+	\colorlet{blockbodyfgcolor}{black}
+	% Innerblock Colors
+	\colorlet{innerblocktitlebgcolor}{white}
+	\colorlet{innerblocktitlefgcolor}{black}
+	\colorlet{innerblockbodybgcolor}{colorOne}
+	\colorlet{innerblockbodyfgcolor}{black}
+	% Note colors
+	\colorlet{notefgcolor}{black}
+	\colorlet{notebgcolor}{colorTwo!50!white}
+	\colorlet{noteframecolor}{colorTwo}
+}
+
+%% +++++ Title Style ++++++
+\definetitlestyle{Daedalus}{width=.96\textwidth, roundedcorners=10, linewidth=8pt, innersep=1cm,
+    titletotopverticalspace=15mm, titletoblockverticalspace=20mm,
+    titlegraphictotitledistance=10pt, titletextscale=2
+}{
+    \begin{scope}[line width=\titlelinewidth, rounded corners=\titleroundedcorners]
+        \draw[color=frameborder]%
+        (\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
+    \end{scope}
+}
+% Title + Logos
+\settitle{ \quad
+\begin{minipage}{13cm}
+    \textcolor{white}{dummy}
+%\includegraphics[width=6cm]{images/daedalus_en_verlauf_rgb_72dpi.png}
+\end{minipage}
+\begin{minipage}{.69\linewidth}
+\color{titlefgcolor}
+\centering
+{\bfseries \Huge \mytitle \par} 
+
+\vspace{1.5\baselineskip}
+{\huge \myauthor}
+\end{minipage}\qquad
+\hfill
+\begin{minipage}{13cm}
+\centering
+\includegraphics[height=3.5cm]{images/TU_Logo_lang_RGB_rot.png} \quad
+\end{minipage}
+}
+
+%% +++++ Block Style ++++++
+\defineblockstyle{Daedalus}{
+    titlewidthscale=1, bodywidthscale=1, titlecenter,
+    titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=15mm,
+    bodyverticalshift=15mm, roundedcorners=10, linewidth=4pt,
+    titleinnersep=8mm, bodyinnersep=16mm
+}{
+    \draw[rounded corners=\blockroundedcorners, inner sep=\blockbodyinnersep, line width=\blocklinewidth, color=frameborder, fill=blockbodybgcolor]
+        (blockbody.south west) rectangle (blockbody.north east); %
+    \ifBlockHasTitle%
+        \draw[rounded corners=10, inner sep=\blocktitleinnersep, line width=\blocklinewidth, color=frameborder, fill=blocktitlebgcolor]
+			(blocktitle.south west) rectangle (blocktitle.north east); %
+    \fi%
+}
+
+%% +++++ Inner Style ++++++
+% \defineinnerblockstyle{Daedalus}{
+%     titlewidthscale=1, bodywidthscale=1, titlecenter,
+%     titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+%     bodyverticalshift=0pt, roundedcorners=5, linewidth=1.5mm,
+%     titleinnersep=.5em, bodyinnersep=1em
+% }{
+%     \begin{scope}[line width=1pt, rounded corners=\innerblockroundedcorners]
+%        \ifInnerblockHasTitle %
+%            \draw[fill=innerblockbodybgcolor]
+%                (innerblockbody.south west) rectangle (innerblocktitle.north east);
+%            \draw[color=black]
+%                (innerblocktitle.south west) -- (innerblocktitle.south east);%
+%        \else
+%              \draw[draw=none, fill=innerblockbodybgcolor]
+%                  (innerblockbody.south west) rectangle (innerblockbody.north east);
+%         \fi
+%     \end{scope}
+% }
+
+%% +++++ Setup Layout ++++++
+\definelayouttheme{Daedalus}{
+    \usecolorstyle{Daedalus}
+    \usebackgroundstyle{Default}
+    \usetitlestyle{Daedalus}
+    \useblockstyle{Daedalus}
+    \useinnerblockstyle{Default}
+    \usenotestyle{Default}
+}
+
+%% +++++ Custom Commands ++++++
+% Vertical space used before and after certain environments
+\newcommand{\skippar}{\vspace{.5\baselineskip}}
+
+% Custom headers
+\newcommand{\subheader}[1]{\skippar\centerline{\color{colorThree!80}\Large\textbf{#1}}\skippar}
+\newcommand{\inlineheader}[1]{{\color{blue}\textbf{#1}}}
+% Highlighted text commands
+\newcommand{\highlight}[1]{{\color{red}\sffamily\textbf{#1}}}
+\newcommand{\defined}[1]{{\color{darkgreen}\textbf{#1}}}
+\newcommand{\important}[1]{{\color{red}\textbf{#1}}}
+% Custom itemize environment
+\newenvironment{itemsposter}{\skippar\begin{itemize}[label={\color{colorThree!80}$\blacktriangleright$},leftmargin=1.5em,topsep=6pt,itemsep=0em,parsep=0pt,labelsep=.5em]}{\end{itemize}\skippar}
+% Custom boxed frames
+\newcommand{\definebox}[1]{\skippar\coloredbox[innersep=1em,linewidth=1pt,framecolor=black,roundedcorners=0,bgcolor=colorOne,roundedcorners=5]{#1}\skippar}
+\newcommand{\makeframe}[3]{\skippar\coloredbox[width=#1,innersep=.5em,linewidth=1pt,framecolor=black,roundedcorners=0,bgcolor=#2,roundedcorners=5]{#3}\skippar}

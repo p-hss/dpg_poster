@@ -1,0 +1,201 @@
+\documentclass[25pt, a0paper, portrait, margin=15mm, innermargin=15mm,
+     blockverticalspace=15mm, colspace=15mm, subcolspace=8mm]{tikzposter} %Default values for poster format options.
+
+\tikzposterlatexaffectionproofoff %hides small comment on how the poster was made at bottom of poster
+
+% \renewcommand{\tiny}{\fontsize{1}{26.5}\selectfont}
+% \renewcommand{\scriptsize}{\fontsize{26.5}{32}\selectfont}
+% \renewcommand{\footnotesize}{\fontsize{31}{38}\selectfont}
+% \renewcommand{\small}{\fontsize{25}{30}\selectfont}
+% \renewcommand{\normalsize}{\fontsize{25}{30}\selectfont}
+% \renewcommand{\large}{\fontsize{25}{30}\selectfont}
+% \renewcommand{\Large}{\fontsize{66}{73}\selectfont}
+% \renewcommand{\LARGE}{\fontsize{80}{95}\selectfont}
+% \renewcommand{\huge}{\fontsize{96}{115}\selectfont}
+% \renewcommand{\Huge}{\fontsize{80}{96}\selectfont}
+
+%% +++++ Packages ++++++
+% Writing and font related
+\usepackage[utf8]{inputenc} % encoding
+\usepackage{lmodern}
+\usepackage{sfmath}  % Sans-serif math font
+\usepackage{exscale} % Correct font scaling in formulas
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{scalerel}
+\usepackage{relsize}
+% Programming
+\usepackage{xspace}
+\usepackage{xargs}
+\usepackage{ifthen}
+\usepackage{etoolbox}
+% Math
+\usepackage{amsmath} % For typesetting math
+\usepackage{amssymb} % Adds new symbols to be used in math mode
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage[fixamsmath,disallowspaces]{mathtools}
+% Misc
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{url}
+\usepackage{lipsum}
+
+%% +++++ Custom Commands ++++++
+% Add your custom commands here
+% \newcommand{\...}[1]{#1}
+
+% Math Macros
+\include{math}
+
+%% +++++ Title and Author ++++++
+\newcommand{\mytitle}{Pxx: Title of Your Project}
+\newcommand{\myauthor}{Your Name (Your Affiliation)}
+
+%% +++++ Predefined Daedalus Theme ++++++
+\include{tikzposterDaedalus}
+\usetheme{Daedalus}
+
+\begin{document}
+
+	\maketitle
+	
+%% +++++ Left column ++++++
+
+	\begin{columns}%blocks will be placed into columns
+	\column{.5}
+		\block{Introduction}{
+			
+			\subheader{This is a subheader}
+			
+			Here is the \defined{Pythagorean theorem}:
+			\begin{center}
+			\makeframe{.5\linewidth}{innerblockbodybgcolor}{
+				\centering $a^2 + b^2 = c^2$
+			}
+			\end{center}
+			
+			\begin{itemsposter}
+			\item
+				This is how to create bullet point items.
+			\item
+				...
+			\end{itemsposter}
+			
+			\begin{center}
+			\makeframe{.75\linewidth}{innerblockbodybgcolor}{
+				\centering Something \highlight{interesting} in a colored box.
+			}
+			\end{center}
+			
+			\subheader{Another subheader}
+			
+			An ordinary math equation with number:
+			\begin{equation}
+				\mathcal{L} \colon \mathbb{R} \times \mathbb{R} \to \mathbb{R}, \ (v, w) \mapsto \mathcal{L}(v, w).
+			\end{equation}
+			
+			\subheader{Our Goal}
+			
+			\begin{center}
+			\makeframe{.9\linewidth}{white}{
+			\centering
+				\important{This way, you can highlight something important.}
+			}
+			\end{center}
+			
+		}
+		
+		\block{The Model}{
+		
+			Blah 
+			
+			Blah 
+			
+			Blah
+			
+			\lipsum[1-5]
+		}
+
+%% +++++ Right column ++++++
+		
+	\column{.5}
+		\block{A Novel Concept}{
+				
+			\definebox{\textbf{Definition:}
+				Here you could add some important definition or concept:
+				\begin{equation*}
+					x := y
+				\end{equation*}
+			}
+			
+			\begin{minipage}{0.6\linewidth}
+				\begin{center}
+				\makeframe{.9\linewidth}{white}{
+				This is an example of how to insert a figure as well as columns
+				}
+				\end{center}
+			\end{minipage}%
+			\begin{minipage}{0.4\linewidth}
+			\centering
+				\includegraphics[width=.9\linewidth]{images/mean_width.pdf}
+			\end{minipage}%
+			
+			\subheader{Some explanations}
+			
+			\lipsum[1]
+			
+			Blah
+			
+			Blah
+			
+			Blah
+		}
+
+		
+		\block{Main Results}{
+		
+			We were able to prove the following result:
+		
+			\definebox{\textbf{Theorem:}
+				This environment may contain you key findings:
+				\begin{equation}
+					e = m c^2
+				\end{equation}
+			}
+			\begin{itemsposter}
+			\item
+				\important{The key message.}
+			\item
+				Some more remarks.
+			\item
+				...
+			\end{itemsposter}
+			
+			\vspace{1\baselineskip}
+			By \texttt{\textbackslash vspace\{your length\}} or \texttt{\textbackslash skippar} your may add some vertical space.
+			
+			And here is some more random text:
+			\lipsum[1-2]
+		}
+
+		\block{References}{
+			
+			\smaller{
+			\textbf{Contact:} Your Name (\url{name@uni.de})
+			
+			\begin{itemsposter}
+			\item
+				Here, you could place references to your recent papers.
+			\item
+				...
+			\end{itemsposter}
+			}
+		}
+
+	\end{columns}
+	
+\end{document}

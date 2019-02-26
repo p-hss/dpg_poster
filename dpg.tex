@@ -1,0 +1,200 @@
+\documentclass[20pt, a0paper, landscape, margin=15mm, innermargin=15mm,
+     blockverticalspace=15mm, colspace=15mm, subcolspace=8mm]{tikzposter} %Default values for poster format options.
+
+\tikzposterlatexaffectionproofoff %hides small comment on how the poster was made at bottom of poster
+
+% \renewcommand{\tiny}{\fontsize{1}{26.5}\selectfont}
+% \renewcommand{\scriptsize}{\fontsize{26.5}{32}\selectfont}
+% \renewcommand{\footnotesize}{\fontsize{31}{38}\selectfont}
+% \renewcommand{\small}{\fontsize{25}{30}\selectfont}
+% \renewcommand{\normalsize}{\fontsize{25}{30}\selectfont}
+% \renewcommand{\large}{\fontsize{25}{30}\selectfont}
+% \renewcommand{\Large}{\fontsize{66}{73}\selectfont}
+% \renewcommand{\LARGE}{\fontsize{80}{95}\selectfont}
+% \renewcommand{\huge}{\fontsize{96}{115}\selectfont}
+% \renewcommand{\Huge}{\fontsize{80}{96}\selectfont}
+
+%% +++++ Packages ++++++
+% Writing and font related
+\usepackage[utf8]{inputenc} % encoding
+\usepackage{lmodern}
+%% +++++  Custom Packages ++++++
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{tikz} 
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[absolute]{textpos}
+\usepackage{inputenc}
+\usepackage{layout}
+\usepackage{amsmath}
+\usepackage{nameref}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage[export]{adjustbox}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage{changepage}
+\usepackage[labelformat=empty]{caption}
+%% +++++ Custom Packages End ++++++
+\usepackage{sfmath}  % Sans-serif math font
+\usepackage{exscale} % Correct font scaling in formulas
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{scalerel}
+\usepackage{relsize}
+% Programming
+\usepackage{xspace}
+\usepackage{xargs}
+\usepackage{ifthen}
+\usepackage{etoolbox}
+% Math
+\usepackage{amsmath} % For typesetting math
+\usepackage{amssymb} % Adds new symbols to be used in math mode
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage[fixamsmath,disallowspaces]{mathtools}
+% Misc
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{url}
+\usepackage{lipsum}
+
+%% +++++ Custom Commands ++++++
+% Add your custom commands here
+\newcommand{\va}[1]{\bm{#1}}
+\newcommand{\ta}[1]{\bm{#1}}
+%\newcommand{\tave}[1]{\langle #1 \rangle_t}
+\newcommand{\tave}[1]{\overline{#1}}
+\newcommand{\txv}[0]{ }
+\newcommand{\p}[0]{\partial}
+\newcommand{\mtxt}[1]{\textrm{#1}}
+\newcolumntype{C}[1]{>{\hsize=#1\hsize\centering\arraybackslash}X}%
+\newcommand{\plot}[3]{
+\begin{figure}[H]
+    \centering
+    %\footnotesize
+    \scriptsize
+    \scalebox{.9}{\input{#1}}
+    \caption{\footnotesize{#2}}
+    \label{#3}
+\end{figure}
+}
+
+% Math Macros
+\include{math}
+
+%% +++++ Title and Author ++++++
+\newcommand{\mytitle}{ Title}
+\newcommand{\myauthor}{Supervisors: {\bf Name of main PI}, Names of other PIs}
+
+%% +++++ Predefined Daedalus Theme ++++++
+\include{tikzposterDaedalus}
+\usetheme{Daedalus}
+
+\begin{document}
+
+	\maketitle
+
+%% +++++ Left column ++++++
+
+	\begin{columns}%blocks will be placed into columns
+	\column{.4}
+       \block{Motivation}{
+          State here the background and motivation for the project. 
+          
+          \begin{itemsposter}
+			\item
+				This is how to create bullet point items.
+			\end{itemsposter}
+      }
+      \block{Line Element Simulation}{
+
+        \begin{center}
+        \begin{tikzpicture}[scale=2.5]
+
+            \draw [blue, very thick] plot [smooth, tension=0.7] coordinates {
+            (-5.5 ,-1.2) (-4.5 ,-0.8) (-3.25, 0.2) (-1.8 , 0.5) 
+            (0   , -0.2) (1.2  ,-0.9) (2.8  ,-0.6) (3.8  , 0.3)};
+
+            \node [blue] at (-5.0 ,-1.5) {L};
+
+            \draw[ultra thick, darkgray, ->] (-4.5 ,-0.8) -- (-3.85 , 0.1);
+            \draw[ultra thick, darkgray,->] (-3.25, 0.2) -- (-2.35 , 0.65);
+            \draw[ultra thick, darkgray,->] (-1.8 , 0.5) -- (-0.4 , 0.3);
+            \draw[ultra thick, darkgray,->] (0  , -0.2 ) -- (0.8  ,-0.6);
+            \draw[ultra thick, darkgray,->] (1.2  ,-0.9) -- (2.3  ,-1.0);
+            \draw[ultra thick, darkgray,->] (2.8  ,-0.6) -- (4.0  , 0.2);
+              
+            \fill (-4.5 ,-0.8)  circle[radius=2pt];
+            \fill (-3.25, 0.2)  circle[radius=2pt];
+            \fill (-1.8 , 0.5)  circle[radius=2pt];
+            \fill (0  , -0.2 )  circle[radius=2pt];
+            \fill (1.2  ,-0.9)  circle[radius=2pt];
+            \fill (2.8  ,-0.6)  circle[radius=2pt];
+  
+            \node [black] at (-1, 0.75) {$\va{l}_i$};
+
+
+        \end{tikzpicture}
+        \end{center}
+			
+           Die Dynamik eines Linienelements wird beschrieben durch 
+       
+       \begin{equation*}
+           \frac{d \va{l}}{d t} = \nabla \va{u} \, \va{l} =
+           \ta{S} \txv \va{l} + \ta{\Omega} \txv \va{l} 
+       \end{equation*}
+
+       Die Streckungsraten $\zeta$, $\xi$ sind definiert als 
+
+       \begin{equation*}
+           \zeta \equiv \frac{d \ln(l)}{d t} = S_{ij} \hat{l}_i  \hat{l}_j,
+           \qquad \xi \equiv \frac{d \ln(A)}{d t} = -S_{ij} \hat{n}_i
+           \hat{n}_j, \; \va{A} = \va{l_1} \times \va{l_2}
+       \end{equation*}
+
+        Die zeitliche Entwicklung der\\ Linienelemente: 
+
+        \begin{equation*}
+            \va{l}(t) = \va{B}(t) \txv \va{l}(0),
+        \end{equation*}
+
+        \begin{equation*}
+            \frac{d}{dt} \va{B} = \va{V} \txv \va{B}(t).
+        \end{equation*}
+	}
+
+%% +++++ Right column ++++++
+		
+	\column{.6}
+		\block{Results}{
+         
+         \subheader{This is a subheader}
+			\begin{itemsposter}
+			\item
+				This is how to create bullet point items.
+			\item
+				...
+			\end{itemsposter}
+        }
+	
+		\block{References}{
+            \smaller[2]{
+			
+			\begin{enumerate}[label=\lbrack\arabic*\rbrack \ ]		
+            \item G. Kutyniok, V. Mehrmann, and P. Petersen. Regularization and numerical solution of the inverse scattering problem using shearlet frames. \emph{J. Inverse Ill-Posed Probl.}, 25:287--309, 2017.
+            \item ...
+            \end{enumerate}
+			}
+        \vspace{-.75\baselineskip}
+		}
+
+	\end{columns}
+	
+\end{document}
