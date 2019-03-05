@@ -52,11 +52,11 @@
 % Math
 \usepackage{amsmath} % For typesetting math
 \usepackage{amssymb} % Adds new symbols to be used in math mode
-\usepackage{amsfonts}
-\usepackage{mathrsfs}
-\usepackage{dsfont}
-\usepackage{amsthm}
-\usepackage{thmtools}
+%\usepackage{amsfonts}
+%\usepackage{mathrsfs}
+%\usepackage{dsfont}
+%\usepackage{amsthm}
+%\usepackage{thmtools}
 \usepackage[fixamsmath,disallowspaces]{mathtools}
 % Misc
 \usepackage{array}
@@ -64,6 +64,7 @@
 \usepackage{adjustbox}
 \usepackage{url}
 \usepackage{lipsum}
+\pdfminorversion=7
 
 %% +++++ Custom Commands ++++++
 % Add your custom commands here
@@ -91,7 +92,7 @@
 
 %% +++++ Title and Author ++++++
 \newcommand{\mytitle}{Statistical properties of material line elements in incompressible MHD turbulence}
-\newcommand{\myauthor}{ {\bf name }, more names}
+\newcommand{\myauthor}{ {\bf name }, more names \\  Faculty}
 
 %% +++++ Predefined Daedalus Theme ++++++
 \include{tikzposterDaedalus}
@@ -106,19 +107,21 @@
 	\begin{columns}%blocks will be placed into columns
 	\column{.4}
        \block{Motivation}{
-		%The statistics of infinitesimal material line elements are studied numerically
-		%in stationary incompressible magnetohydrodynamic (MHD) turbulence using velocity
-		%gradient time series. The velocity gradient data is obtained by tracking
-		%Lagrangian particles in a stochastically forced direct numerical simulation (DNS).
-		 The deformation of material lines in turbulence is of fundamental interest and practical
-		 importance. Vortex lines and magnetic field lines in an inviscid fluid of high conductivity
-		 are examples of vector fields that are proportional to material line elements. It is  known
-		 analytically and shown in hydrodynamic simulations (Girimaji $\&$ Pope 1990) that the length
-		 of material line elements increases exponentially in time. The stretching rate of line and
-		 surface elements are found to be significantly lower in MHD turbulence than in the hydrodynamic
-		 case. Moreover the results show that the material lines are primarily aligned along the direction
-		 of the magnetic field. Further the role of the magnetic field in material element deformation is
-		 investigated by injecting cross and magnetic helicity into the system.
+		The deformation of material lines in turbulence is of fundamental interest and
+        practical importance. Due to its diffusive character fluid particles material lines
+        consisting of the same set of fluid partices tend to stretch while following the
+        fluid motion. Vortex lines and magnetic field lines in an inviscid fluid
+        of high conductivity are examples of vector fields that are proportional to
+        material line elements. It is  known analytically [\,1\,] and shown in hydrodynamic
+        simulations [\,2\,] that the length of material line elements
+        increases exponentially in time. In the present work the material line deformation
+        is studied statistically throug  infinitesimal material line elements are studied
+        numerically in stationary incompressible magnetohydrodynamic (MHD) turbulence using
+        velocity gradient time series. The velocity gradient data is obtained by tracking
+		Lagrangian particles in a stochastically forced direct numerical simulation (DNS).
+        In order to further understand the influence of the magnetic field on the material
+        line deformation a method for injecting cross helicity has been devised to controll
+        the alignment of the magnetic and velocity field.
       }
       \block{Line Element Simulation}{
 
@@ -184,12 +187,10 @@
 			\begin{enumerate}[label=\lbrack\arabic*\rbrack \ ]		
 
             \item Batchelor, G. K. \textit{The effect of homogeneous turbulence
-                on material lines and surfaces.} Proc. R. Soc. Lond. A, 213(1114), 349-366, 1952.
-
+                on material lines and surfaces.} Proc. R. Soc. Lond. A, 213(1114),
+                 349-366, 1952.
             \item Girimaji, S. S., Pope, S. B. \textit{Material-element deformation
                 in isotropic turbulence}. Journal of fluid mechanics, 220, 427-458, 1990. 
-
-            \item Helicity
 
             \end{enumerate}
 			}
@@ -205,17 +206,14 @@
 
                  \subheader{Cross helicity}
 
+                 \begin{equation*}
+                     H_C = \int dV \va{v} \cdot \va{b}
+                 \end{equation*}
+
                     \plot{figures/forcing/test_normed_helicity_mhd_128}
                     {The temporal evlution of the alignment is shown for different values of $\sigma_c$: $H00: \sigma^{f}_c = 1$,
                     $H11: \sigma^{f}_c = 0.6$, $H12: \sigma^{f}_c = 0.4$, $H13: \sigma^{f}_c = 0.2$, $H14: \sigma^{f}_c = 0$.}
                     {test_normed_xhelicity_128}
-
-                	\begin{itemsposter}
-                	\item
-                		This is how to create bullet point items.
-                	\item
-                		...
-                	\end{itemsposter}
 
             \end{minipage}
             \hfill
