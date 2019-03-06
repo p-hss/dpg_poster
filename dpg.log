@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.22)  5 MAR 2019 14:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.22)  5 MAR 2019 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1626,15 +1626,15 @@ Package pdftex.def Info: images/TU_Logo_lang_RGB_rot.png used on input line 103
 .
 (pdftex.def)             Requested size: 178.68565pt x 99.58464pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 122.
+(Font)              <24.88> on input line 123.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 122.
-LaTeX Font Info:    Try loading font information for U+bbold on input line 183.
+(Font)              <17.28> on input line 123.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 195.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <17.28> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 201.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 211.
 
 (./figures/forcing/test_normed_helicity_mhd_128.tex
 \gptboxheight=\skip63
@@ -1674,9 +1674,9 @@ rted-to.pdf used on input line 131.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 237.
+(Font)              <10> on input line 238.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 237.
+(Font)              <7> on input line 238.
 
 (./figures/hd_line_evo.tex
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 103.
@@ -1746,34 +1746,33 @@ rot.png> <./figures/forcing/test_normed_helicity_mhd_128-eps-converted-to.pdf>
 <./figures/hd_line_evo-eps-converted-to.pdf> <./figures/histograms/mhd_strain_m
 agnetic_angle_histo_t20-eps-converted-to.pdf>] (./dpg.aux) ) 
 Here is how much of TeX's memory you used:
- 23781 strings out of 494318
- 470191 string characters out of 6168872
- 692940 words of memory out of 5000000
- 26451 multiletter control sequences out of 15000+600000
+ 23779 strings out of 494318
+ 470157 string characters out of 6168872
+ 692592 words of memory out of 5000000
+ 26449 multiletter control sequences out of 15000+600000
  165928 words of font info for 152 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
- 62i,22n,94p,786b,1677s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,22n,94p,786b,1679s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/f
 onts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
 s/lm/lm-mathsy.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type
 1/bbold10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-sbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmib10.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmssbo10.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmsso17.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/symbols/msam10.pfb>
-Output written on dpg.pdf (1 page, 580543 bytes).
+sbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmmib10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbo10.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmsso17.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmsso8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on dpg.pdf (1 page, 565214 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
+ 123 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
