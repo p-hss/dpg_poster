@@ -1,4 +1,4 @@
-\documentclass[20pt, a0paper, landscape, margin=15mm, innermargin=15mm,
+\documentclass[20pt, a0paper, portrait, margin=15mm, innermargin=15mm,
      blockverticalspace=15mm, colspace=15mm, subcolspace=8mm]{tikzposter} %Default values for poster format options.
 
 \tikzposterlatexaffectionproofoff %hides small comment on how the poster was made at bottom of poster
@@ -17,7 +17,7 @@
 %% +++++ Packages ++++++
 % Writing and font related
 \usepackage[utf8]{inputenc} % encoding
-\usepackage{lmodern}
+\usepackage{exscale} 
 %% +++++  Custom Packages ++++++
 \usepackage{bm}
 \usepackage{graphicx}
@@ -37,10 +37,10 @@
 \usepackage{bm}
 \usepackage{bbold}
 \usepackage{changepage}
-\usepackage[labelformat=empty]{caption}
+%\usepackage[labelformat=empty]{caption}
+\usepackage{caption}
 %% +++++ Custom Packages End ++++++
 \usepackage{sfmath}  % Sans-serif math font
-\usepackage{exscale} % Correct font scaling in formulas
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{scalerel}
 \usepackage{relsize}
@@ -78,9 +78,9 @@
 \newcommand{\plot}[3]{
 \begin{figure}[H]
     \centering
-    %\footnotesize
     \scriptsize
-    \scalebox{1.2}{\input{#1}}
+    %\tiny
+    \scalebox{1.3}{\input{#1}}
     \caption{\footnotesize{#2}}
     \label{#3}
 \end{figure}
@@ -91,7 +91,8 @@
 
 %% +++++ Title and Author ++++++
 \newcommand{\mytitle}{Statistical properties of material line elements in incompressible MHD turbulence}
-\newcommand{\myauthor}{ {\bf name }, more names}
+\newcommand{\myauthor}{ names\\\vspace{1cm} Zentrum für Astronomie und Astrophysik, Technische Universität Berlin}
+		
 
 %% +++++ Predefined Daedalus Theme ++++++
 \include{tikzposterDaedalus}
@@ -107,22 +108,25 @@
 	\column{.4}
 
        \block{Motivation}{
-		%The statistics of infinitesimal material line elements are studied numerically
-		%in stationary incompressible magnetohydrodynamic (MHD) turbulence using velocity
-		%gradient time series. The velocity gradient data is obtained by tracking
-		%Lagrangian particles in a stochastically forced direct numerical simulation (DNS).
-		 The deformation of material lines in turbulence is of fundamental interest and practical
-		 importance. Vortex lines and magnetic field lines in an inviscid fluid of high conductivity
-		 are examples of vector fields that are proportional to material line elements. It is  known
-		 analytically and shown in hydrodynamic simulations (Girimaji $\&$ Pope 1990) that the length
-		 of material line elements increases exponentially in time. The stretching rate of line and
-		 surface elements are found to be significantly lower in MHD turbulence than in the hydrodynamic
-		 case. Moreover the results show that the material lines are primarily aligned along the direction
-		 of the magnetic field. Further the role of the magnetic field in material element deformation is
-		 investigated by injecting cross and magnetic helicity into the system.
+        The deformation of material lines in turbulence is of fundamental interest and
+        practical importance. Due to its diffusive character fluid particles material lines
+        consisting of the same set of fluid particles tend to stretch while following the
+        fluid motion. Vortex lines and magnetic field lines in an inviscid fluid
+        of high conductivity are examples of vector fields that are proportional to
+        material line elements. It is  known analytically [\,1\,] and shown in hydrodynamic
+        simulations [\,2\,] that the length of material line elements
+        increases exponentially in time. In the present work the deformation of material lines
+        is studied statistically by simulating infinitesimal material line elements 
+        in stationary incompressible magnetohydrodynamic (MHD) turbulence using
+        velocity gradient time series. The velocity gradient data is obtained by tracking
+        Lagrangian particles in a stochastically forced direct numerical simulation (DNS).
+        In order to further understand the influence of the magnetic field on the material
+        line deformation a method for injecting cross helicity has been devised to control
+        the alignment of the magnetic and velocity field.
       }
 
-      \block{Line Element Simulation}{
+
+      \block{Line element simulation}{
 	  	
 	  	A Material line is defined as a line that always consists of the same set of particles or fluid
 		elements. In order to study the material line dynamics statistically the lines are simplified to 
@@ -159,8 +163,8 @@
   
         \end{tikzpicture}
 		\vspace{1cm}
-		\captionof{figure}{A material line $L$ is approximated by line elements\\ $l_i$ which are computed for
-						   for each lagrangian particle $p_i$. }
+		\captionof{figure}{A material line $L$ is approximated by line elements\\ $l$ which are computed for
+						   for each lagrangian particle $p$. }
 		\end{center}
 		\vspace{2cm}
 		%\caption{a line} 
@@ -168,29 +172,29 @@
 		%\end{figure}	
 		The dynamic evolution of a line element $\va{l}$ is given by
        
-       \begin{equation*}
+       \begin{equation}
            \frac{d \va{l}}{d t} = \nabla \va{u} \, \va{l} =
            \ta{S} \txv \va{l} + \ta{\Omega} \txv \va{l},
-       \end{equation*}
+       \end{equation}
 	   where velocity gradient can be split into is the symmetric part $\ta{S}$ (strain-rate tensor) 
 	   and an antisymmetric part $\ta{\Omega}$(rotation-rate tensor). The line stretching rate $\zeta$ is defined as
 
-       \begin{equation*}
+       \begin{equation}
            \zeta \equiv \frac{d \ln(l)}{d t} = S_{ij} \hat{l}_i  \hat{l}_j.
            %\qquad \xi \equiv \frac{d \ln(A)}{d t} = -S_{ij} \hat{n}_i
            %\hat{n}_j, \; \va{A} = \va{l_1} \times \va{l_2}
-       \end{equation*}
+       \end{equation}
 
        In the simulation lagrangian velocity gradient data $\va{V}$ is first gathered for each particle
 	   and then used to evolve the corresponding line elements through the matrix $\va{B}$
 
-        \begin{equation*}
+        \begin{equation}
             \frac{d}{dt} \va{B} = \va{V} \txv \va{B}(t), \qquad \va{B}(0) = \mathbb{1},
-        \end{equation*}
+        \end{equation}
 
-        \begin{equation*}
+        \begin{equation}
             \va{l}(t) = \va{B}(t) \txv \va{l}(0).
-        \end{equation*}
+        \end{equation}
 
 	}
 
@@ -213,51 +217,84 @@
 %% +++++ Right column ++++++
 		
 	\column{.6}
-		\block{Forced Helicity Injection}{
-         
-            \begin{minipage}[t]{30cm}
+		\block{Helicity injection}{
+            \begin{minipage}[t]{20cm}
 
-                	\begin{itemsposter}
-						\item pseudo spectral code
-						\item ou forcing on large scales
-						\item helicity forcing on small scales
-						\item ideal invariant, how it reduces dynamics of the system
-                	\end{itemsposter}
+				The velocity gradient is obtained by tracking lagrangian particles through
+				tricubic interpolation in a direct numerical simulation of the 
+				incompressible MHD equations which are solved using the pseudo spectral method.
+				Since the MHD equations are dissipative a stochastic forcing based on the 
+				Ornstein-Uhlenbeck Process was applied on large scales to keep the system 
+			   in a stationary state. 	
+			   
+			 \subheader{Cross helicity}
+				
+				In order to further understand the role of the magnetic field in material line
+				deformation the alignment of the velocity field $\va{v}$ and the magnetic field $\va{b}$
+				was controlled by injecting cross helicity $H^{\textsf{\small{C}}}$ into the system,
+
+			   \begin{equation}
+				   H^{\textsf{\small{C}}} = \int \va{v} \cdot \va{b} \, dV. 
+				   \label{xhel}
+			   \end{equation}
+
+				\begin{figure}[H]
+					\centering
+					\scriptsize
+					\scalebox{1.2}{\input{figures/forcing/test_normed_helicity_mhd_128}}
+					\caption{\footnotesize{The alignment is shown for different values of $\sigma_c$:\\
+					$H00: \sigma^{f}_c = 1$,$H11: \sigma^{f}_c = 0.6$, $H12: \sigma^{f}_c = 0.4$,
+					$H13: \sigma^{f}_c = 0.2$, $H14: \sigma^{f}_c = 0$.}}
+					\label{test_normed_xhelicity_128}
+				\end{figure}
 
             \end{minipage}
             \hfill
-            \begin{minipage}[t]{30cm}
+            \begin{minipage}[t]{20cm}
 
-                    \plot{figures/forcing/test_normed_helicity_mhd_128}
-                    {The alignment is shown for different values of $\sigma_c$:\\
-				   	$H00: \sigma^{f}_c = 1$,$H11: \sigma^{f}_c = 0.6$, $H12: \sigma^{f}_c = 0.4$,
-					$H13: \sigma^{f}_c = 0.2$, $H14: \sigma^{f}_c = 0$.}
-                    {test_normed_xhelicity_128}
+			   Since the value $H^{\textsf{\small{C}}}$ in Eq. (\ref{xhel}) depends on the magnitude and the
+			   orientation of $\va{v}$ and $\va{b}$, the dynamical alignment
+			   $\sigma_{\textsf{\small{C}}}=H^{\textsf{\small{C}}}/|H^{\textsf{\small{C}}}|$  is shown in Fig.
+			   (\ref{test_normed_xhelicity_128}).
+
+				\plot{figures/forcing/xhel_energy_dissipation_128}
+				{MHD stochastic forcing, dependency of energy dissipation evolution on cross helicity on .}
+				{xhel_energy_dissipation_128}
 
             \end{minipage}
        }
 
 		\block{Results}{
 
-            \begin{minipage}[t]{30cm}
+            \begin{minipage}[t]{20cm}
 
                  \subheader{Strechting and alignment of line elements}
 
                     \plot{figures/hd_line_evo}
-                    {caption}
-                    {line_stretching}
+						{caption}
+						{line_stretching}
 
-                \plot{figures/histograms/mhd_strain_magnetic_angle_histo_t20}
-                    {MHD p.d.fs for the angles between the local magnetic field and the
-                    line element orientation at steady state ($t/\tau_{\eta} = 20$).}
-                    {mhd_strain_magnetic_angle_histo}
+					\plot{figures/histograms/mhd_strain_magnetic_angle_histo_t20}
+						{MHD p.d.fs for the angles between the local magnetic field and the
+						line element orientation at steady state ($t/\tau_{\eta} = 20$).}
+						{mhd_strain_magnetic_angle_histo}
 
 
             \end{minipage}
             \hfill
-            \begin{minipage}[t]{30cm}
+            \begin{minipage}[t]{20cm}
+
+
+                    \plot{figures/histograms/mhd_zeta_histo_t20}
+						{caption}
+						{histo}
 
                  \subheader{Influence of helicities on line strechting}
+
+                    \plot{figures/line_xhel_scaling}
+						{caption}
+						{xhel_scaling}
+
                     \begin{itemsposter}
                     \item
                         This is how to create bullet point items.
