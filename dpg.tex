@@ -93,7 +93,6 @@
 \newcommand{\mytitle}{Statistical properties of material line elements in incompressible MHD turbulence}
 \newcommand{\myauthor}{ names\\\vspace{1cm} Zentrum für Astronomie und Astrophysik, Technische Universität Berlin}
 		
-
 %% +++++ Predefined Daedalus Theme ++++++
 \include{tikzposterDaedalus}
 \usetheme{Daedalus}
@@ -241,10 +240,8 @@
 				\begin{figure}[H]
 					\centering
 					\scriptsize
-					\scalebox{1.2}{\input{figures/forcing/test_normed_helicity_mhd_128}}
-					\caption{\footnotesize{The alignment is shown for different values of $\sigma_c$:\\
-					$H00: \sigma^{f}_c = 1$,$H11: \sigma^{f}_c = 0.6$, $H12: \sigma^{f}_c = 0.4$,
-					$H13: \sigma^{f}_c = 0.2$, $H14: \sigma^{f}_c = 0$.}}
+					\scalebox{1.2}{\input{figures/forcing/xhel_normed_128}}
+					\caption{\footnotesize{The alignment is shown for different values of $\sigma_c$:}}
 					\label{test_normed_xhelicity_128}
 				\end{figure}
 
@@ -291,7 +288,7 @@
 
                  \subheader{Influence of helicities on line strechting}
 
-                    \plot{figures/line_xhel_scaling}
+                    \plot{figures/line_xhel_scaling_128}
 						{caption}
 						{xhel_scaling}
 

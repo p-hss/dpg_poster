@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.22)  6 MAR 2019 18:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.22)  7 MAR 2019 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1430,19 +1430,19 @@ Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 (./tikzposterDaedalus.tex) (./dpg.aux)
 \openout1 = `dpg.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Try loading font information for T1+aess on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 100.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aess.fd
@@ -1531,22 +1531,22 @@ Package caption Info: End \AtBeginDocument code.
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no = in font nullfont!
 Missing character: There is no 2 in font nullfont!
-LaTeX Font Info:    Try loading font information for OT1+aess on input line 104
+LaTeX Font Info:    Try loading font information for OT1+aess on input line 103
 .
 (/usr/share/texlive/texmf-dist/tex/latex/ae/ot1aess.fd
 File: ot1aess.fd 1997/11/16 Font definitions for OT1/aess.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 104.
+LaTeX Font Info:    Try loading font information for U+msa on input line 103.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 104.
+LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 104.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 103.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1555,64 +1555,61 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 File: images/TU_Logo_kurz_RGB_rot.pdf Graphic file (type pdf)
 
 <use images/TU_Logo_kurz_RGB_rot.pdf>
-Package pdftex.def Info: images/TU_Logo_kurz_RGB_rot.pdf used on input line 104
+Package pdftex.def Info: images/TU_Logo_kurz_RGB_rot.pdf used on input line 103
 .
 (pdftex.def)             Requested size: 228.79485pt x 170.71652pt.
 
-Overfull \hbox (133.51622pt too wide) in paragraph at lines 104--104
+Overfull \hbox (133.51622pt too wide) in paragraph at lines 103--103
 [] $[]$ $[]$  $[]$ 
  []
 
 File: images/TU_Logo_kurz_RGB_rot.pdf Graphic file (type pdf)
 <use images/TU_Logo_kurz_RGB_rot.pdf>
-Package pdftex.def Info: images/TU_Logo_kurz_RGB_rot.pdf used on input line 104
+Package pdftex.def Info: images/TU_Logo_kurz_RGB_rot.pdf used on input line 103
 .
 (pdftex.def)             Requested size: 228.79485pt x 170.71652pt.
 
-Overfull \hbox (133.51622pt too wide) in paragraph at lines 104--104
+Overfull \hbox (133.51622pt too wide) in paragraph at lines 103--103
 [] $[]$ $[]$  $[]$ 
  []
 
-LaTeX Font Info:    Try loading font information for U+bbold on input line 199.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 198.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
 LaTeX Font Info:    Font shape `T1/aess/m/it' in size <17.28> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 215.
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 214.
 
-(./figures/forcing/test_normed_helicity_mhd_128.tex
-\gptboxheight=\skip63
-\gptboxwidth=\skip64
-\gptboxtext=\box83
-Package epstopdf Info: Source file: <figures/forcing/test_normed_helicity_mhd_1
-28.eps>
-(epstopdf)                    date: 2019-01-15 14:22:14
-(epstopdf)                    size: 596720 bytes
-(epstopdf)             Output file: <figures/forcing/test_normed_helicity_mhd_1
-28-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-02-26 12:36:34
-(epstopdf)                    size: 179482 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/forcing/test_norme
-d_helicity_mhd_128-eps-converted-to.pdf figures/forcing/test_normed_helicity_mh
-d_128.eps>
-(epstopdf)             \includegraphics on input line 131.
+(./figures/forcing/xhel_normed_128.tex
+Package epstopdf Info: Source file: <figures/forcing/xhel_normed_128.eps>
+(epstopdf)                    date: 2019-03-07 15:22:21
+(epstopdf)                    size: 453967 bytes
+(epstopdf)             Output file: <figures/forcing/xhel_normed_128-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2019-03-07 15:22:35
+(epstopdf)                    size: 127674 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/forcing/xhel_norme
+d_128-eps-converted-to.pdf figures/forcing/xhel_normed_128.eps>
+(epstopdf)             \includegraphics on input line 116.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./figures/forcing/test_normed_helicity_mhd_128-e
-ps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most versi
-on <1.5> allowed
+pdfTeX warning: pdflatex (file ./figures/forcing/xhel_normed_128-eps-converted-
+to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allo
+wed
 
-<figures/forcing/test_normed_helicity_mhd_128-eps-converted-to.pdf, id=30, 433.
-62pt x 289.08pt>
-File: figures/forcing/test_normed_helicity_mhd_128-eps-converted-to.pdf Graphic
- file (type pdf)
-
-<use figures/forcing/test_normed_helicity_mhd_128-eps-converted-to.pdf>
-Package pdftex.def Info: figures/forcing/test_normed_helicity_mhd_128-eps-conve
-rted-to.pdf used on input line 131.
+<figures/forcing/xhel_normed_128-eps-converted-to.pdf, id=30, 433.62pt x 289.08
+pt>
+File: figures/forcing/xhel_normed_128-eps-converted-to.pdf Graphic file (type p
+df)
+ <use figures/forcing/xhel_normed_128-eps-converted-to.pdf>
+Package pdftex.def Info: figures/forcing/xhel_normed_128-eps-converted-to.pdf u
+sed on input line 116.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 )
 (./figures/forcing/xhel_energy_dissipation_128.tex
+\gptboxheight=\skip63
+\gptboxwidth=\skip64
+\gptboxtext=\box83
 Package epstopdf Info: Source file: <figures/forcing/xhel_energy_dissipation_12
 8.eps>
 (epstopdf)                    date: 2019-01-15 15:46:39
@@ -1723,28 +1720,31 @@ Package pdftex.def Info: figures/histograms/mhd_zeta_histo_t20-eps-converted-to
 .pdf used on input line 120.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 )
-(./figures/line_xhel_scaling.tex
-Package epstopdf Info: Source file: <figures/line_xhel_scaling.eps>
-(epstopdf)                    date: 2019-03-06 18:44:55
-(epstopdf)                    size: 20605 bytes
-(epstopdf)             Output file: <figures/line_xhel_scaling-eps-converted-to
-.pdf>
-(epstopdf)                    date: 2019-03-06 18:48:47
-(epstopdf)                    size: 4466 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/line_xhel_scaling-
-eps-converted-to.pdf figures/line_xhel_scaling.eps>
+(./figures/line_xhel_scaling_128.tex
+Package epstopdf Info: Source file: <figures/line_xhel_scaling_128.eps>
+(epstopdf)                    date: 2019-03-07 14:00:41
+(epstopdf)                    size: 20694 bytes
+(epstopdf)             Output file: <figures/line_xhel_scaling_128-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2019-03-07 14:08:44
+(epstopdf)                    size: 4479 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/line_xhel_scaling_
+128-eps-converted-to.pdf figures/line_xhel_scaling_128.eps>
 (epstopdf)             \includegraphics on input line 115.
 Package epstopdf Info: Output file is already uptodate.
 
 
-pdfTeX warning: pdflatex (file ./figures/line_xhel_scaling-eps-converted-to.pdf
-): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/line_xhel_scaling-eps-converted-to.pdf, id=35, 433.62pt x 289.08pt>
-File: figures/line_xhel_scaling-eps-converted-to.pdf Graphic file (type pdf)
+pdfTeX warning: pdflatex (file ./figures/line_xhel_scaling_128-eps-converted-to
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
 
-<use figures/line_xhel_scaling-eps-converted-to.pdf>
-Package pdftex.def Info: figures/line_xhel_scaling-eps-converted-to.pdf used on
- input line 115.
+<figures/line_xhel_scaling_128-eps-converted-to.pdf, id=35, 433.62pt x 289.08pt
+>
+File: figures/line_xhel_scaling_128-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use figures/line_xhel_scaling_128-eps-converted-to.pdf>
+Package pdftex.def Info: figures/line_xhel_scaling_128-eps-converted-to.pdf use
+d on input line 115.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 ) [1
 
@@ -1753,41 +1753,42 @@ Package pdftex.def Info: figures/line_xhel_scaling-eps-converted-to.pdf used on
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/TU_Logo_kurz_RGB_
-rot.pdf> <./figures/forcing/test_normed_helicity_mhd_128-eps-converted-to.pdf> 
-<./figures/forcing/xhel_energy_dissipation_128-eps-converted-to.pdf> <./figures
-/hd_line_evo-eps-converted-to.pdf> <./figures/histograms/mhd_strain_magnetic_an
-gle_histo_t20-eps-converted-to.pdf> <./figures/histograms/mhd_zeta_histo_t20-ep
-s-converted-to.pdf> <./figures/line_xhel_scaling-eps-converted-to.pdf>] (./dpg.
-aux) ) 
+rot.pdf> <./figures/forcing/xhel_normed_128-eps-converted-to.pdf> <./figures/fo
+rcing/xhel_energy_dissipation_128-eps-converted-to.pdf> <./figures/hd_line_evo-
+eps-converted-to.pdf> <./figures/histograms/mhd_strain_magnetic_angle_histo_t20
+-eps-converted-to.pdf> <./figures/histograms/mhd_zeta_histo_t20-eps-converted-t
+o.pdf> <./figures/line_xhel_scaling_128-eps-converted-to.pdf>] (./dpg.aux) ) 
 Here is how much of TeX's memory you used:
  23746 strings out of 494318
- 469261 string characters out of 6168872
- 702771 words of memory out of 5000000
+ 469198 string characters out of 6168872
+ 701415 words of memory out of 5000000
  26391 multiletter control sequences out of 15000+600000
  70907 words of font info for 175 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
  62i,22n,94p,786b,1679s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi17.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on dpg.pdf (1 page, 608598 bytes).
+</u
+sr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
+17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi17.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on dpg.pdf (1 page, 563843 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
+ 132 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  144 words of extra memory for PDF output out of 10000 (max. 10000000)
 
