@@ -64,7 +64,7 @@
 \usepackage{adjustbox}
 \usepackage{url}
 \usepackage{lipsum}
-\pdfminorversion=7
+%\pdfminorversion=7
 
 %% +++++ Custom Commands ++++++
 % Add your custom commands here
@@ -92,7 +92,7 @@
 
 %% +++++ Title and Author ++++++
 \newcommand{\mytitle}{Statistical properties of material line elements in incompressible MHD turbulence}
-\newcommand{\myauthor}{ Philipp Hess, Oliver Henze, Wolf-Christian Müller \\\vspace{1cm} Zentrum für Astronomie und
+\newcommand{\myauthor}{Philipp Hess, Oliver Henze, Wolf-Christian Müller \\\vspace{1cm} Zentrum für Astronomie und
 Astrophysik, Technische Universität Berlin, Germany}
 		
 %% +++++ Predefined Daedalus Theme ++++++
@@ -115,7 +115,7 @@ Astrophysik, Technische Universität Berlin, Germany}
         fluid motion. Vortex lines and magnetic field lines in an inviscid fluid
         of high conductivity are examples of vector fields that are proportional to
         material lines. It is  known analytically [\,1\,] and shown in hydrodynamic
-        simulations [\,2\,] that the length of material line elements
+        simulations [\,2\,][\,3\,] that the length of material line elements
         increases exponentially in time. In the present work the deformation of
         material lines is studied statistically by simulating infinitesimal
         material line elements 
@@ -205,13 +205,13 @@ Astrophysik, Technische Universität Berlin, Germany}
         tricubic interpolation in a direct numerical simulation of the 
         incompressible MHD equations, 
         \begin{align*}
-            &\partial_t \va{\omega} = \nabla \times [\va{v} \times \va{\omega}
+            \partial_t \va{\omega} &= \nabla \times [\va{v} \times \va{\omega}
             - \va{B} \times (\nabla \times \va{B})] + \nu \nabla^{2} \va{\omega}
-            + \va{f}^{\va{\omega}}_{forcing},\\
-            &\partial_t \va{B} = \nabla \times (\va{v} \times \va{B}) + \lambda
+            + \va{F}_{\va{\omega}}^{f},\\
+            \partial_t \va{B} &= \nabla \times (\va{v} \times \va{B}) + \lambda
             \nabla^{2} \va{B}
-            + \va{f}^{\va{B}}_{forcing},\\
-            & \nabla \cdot \va{v} = \nabla \cdot \va{B} = 0,
+            + \va{F}_{\va{B}}^{f},\\
+             \nabla \cdot \va{v} &= \nabla \cdot \va{B} = 0,
         \end{align*}
 
         which are solved using the pseudo spectral method.
@@ -237,7 +237,7 @@ Astrophysik, Technische Universität Berlin, Germany}
 
             \vspace{0.5cm}
 
-            \item Yeung, P. K.,  Pope, S. B. . \textit{Lagrangian statistics from
+            \item Yeung, P. K.,  Pope, S. B. \textit{Lagrangian statistics from
                 direct numerical simulation of isotropic turbulence}. J. Fluid
                 Mech., 207, 531–586, 1989.
 
@@ -264,19 +264,20 @@ Astrophysik, Technische Universität Berlin, Germany}
                 The cross helicity given by
 
                 \begin{equation*}
-                    H_{\textsf{\small{C}}} = \int \va{v} \cdot \va{b} \, dV.
+                    H_{\textsf{\small{C}}} = \int \va{v} \cdot \va{B} \, dV.
                     \label{xhel}
                 \end{equation*}
 
                 represents the orientation of two fields and therefore the
                 coupling strength. In order to simulate this effect on the 
                 line element stretching, the large scale fields were rotated
-                for different degrees of alignment $\sigma_{\textsf{\small{C}}} = H_{\textsf{\small{C}}}/H^{\textsf{\small{max}}}_{\textsf{\small{C}}}$.
+                for different degrees of alignment $\sigma_{\textsf{\small{C}}}
+			   	= H_{\textsf{\small{C}}}/H^{\textsf{\small{max}}}_{\textsf{\small{C}}}$.
 
 				\begin{figure}[H]
 					\centering
 					\scriptsize
-					\scalebox{1.2}{\input{figures/forcing/xhel_normed_128}}
+					\scalebox{1.30}{\input{figures/forcing/xhel_normed_128}}
 					\caption{\footnotesize{The average alignment over time is shown for different
                     forcing parameters $\sigma_{c,f}$.}}
 					\label{test_normed_xhelicity_128}
@@ -290,7 +291,7 @@ Astrophysik, Technische Universität Berlin, Germany}
                 Elsässer formulation of the incompressible MHD equations,
                 \begin{align*}
                     \label{elsasser_eq}
-                    \va{z}^{\pm} &= \va{v} \pm \va{b},\\
+                    \va{z}^{\pm} &= \va{v} \pm \va{B},\\
                     \nabla \cdot \va{z}^{\pm} &= 0\\
                     \frac{\partial}{\partial t} \va{z}^{\pm} + (\va{z}^{\mp}\cdot
                     \nabla)\va{z}^{\pm} &= -\nabla P + \frac{\nu + \lambda}{2}\Delta
@@ -301,7 +302,7 @@ Astrophysik, Technische Universität Berlin, Germany}
                 By reducing the non-linear interaction, the energy injected on
                 large scales is transport less effienctly to smaller scales.
 
-				\plot{figures/forcing/xhel_energy_dissipation_128}
+				\plot{figures/forcing/xhel_test_energy_flux_normed_t_05}
 				{MHD stochastic forcing, dependency of energy dissipation evolution on cross helicity on .}
 				{xhel_energy_dissipation_128}
 
@@ -320,7 +321,7 @@ Astrophysik, Technische Universität Berlin, Germany}
                 strain directions were calculated from the local strain rate
                 tensor.
 
-                \plot{figures/hd_line_evo}
+                \plot{figures/mhd_line_evo}
                     {caption}
                     {line_stretching}
 
@@ -330,7 +331,7 @@ Astrophysik, Technische Universität Berlin, Germany}
                 below for different angles between the line elements and the
                 principal strain rates as well as vorticity and magnetic fields.
 
-                \plot{figures/histograms/mhd_strain_magnetic_angle_histo_t20}
+                \plot{figures/histograms/mhd_angle_histo_t20}
                     {MHD p.d.fs for the angles between the local magnetic field and the
                     line element orientation at steady state ($t/\tau_{\eta} = 20$).}
                     {mhd_strain_magnetic_angle_histo}
