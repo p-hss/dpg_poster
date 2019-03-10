@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1552221348 "dpg.tex" "dpg.pdf" "dpg" 1552221349
+["pdflatex"] 1552239224 "dpg.tex" "dpg.pdf" "dpg" 1552239226
   "/etc/texmf/web2c/texmf.cnf" 1512878460 1101 af7716885e081ab43982cab7b4672c1a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/ae/aer10.tfm" 1136768653 6076 dc5394361b1c55a30e76ff07ab99157c ""
@@ -260,8 +260,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1503347518 31075 dbb81bd39d798acf14cc121a151f7fe7 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1512878796 1346346 7f2b8b715a9ddb095afe3697a6ba02b5 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1512878720 3822875 3fb9f1a74dce86ae5cebb0b3fd7f62d0 ""
-  "dpg.aux" 1552221349 5094 014f13a98e358ee70523e33cc487cacf ""
-  "dpg.tex" 1552221345 16114 54d066a329de377e400b82022da643d3 ""
+  "dpg.aux" 1552239225 5094 014f13a98e358ee70523e33cc487cacf ""
+  "dpg.tex" 1552239223 16183 f6d424e5cab668baeaba11910558a0c6 ""
   "figures/forcing/xhel_normed_128-eps-converted-to.pdf" 1552214940 95562 477680ce665d081a29e602bc22b47415 ""
   "figures/forcing/xhel_normed_128.eps" 1552214940 347265 0262a2ce5971cf93ded68c560fa31b0c ""
   "figures/forcing/xhel_normed_128.tex" 1552214940 4916 17716120e316b9c7612a66af8ac150d3 ""
@@ -293,9 +293,9 @@
   "tikzposterNotestyles.tex" 1512466072 9168 11d1f2a955f239149d8564569c219387 ""
   "tikzposterTitlestyles.tex" 1512466072 6911 a23c31b43e73e58db40ccb73788295d8 ""
   (generated)
+  "math.aux"
   "dpg.log"
   "tikzposterDaedalus.aux"
-  "dpg.pdf"
-  "[.aux"
-  "math.aux"
   "dpg.aux"
+  "[.aux"
+  "dpg.pdf"

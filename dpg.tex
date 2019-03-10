@@ -132,7 +132,7 @@ Astrophysik, Technische Universität Berlin, Germany}
 
 	  	A material line is defined as a line that always consists of the same set of particles or fluid
 		elements. In order to study the material line dynamics statistically the lines are simplified to 
-		infinitessimal elements (Batchelor $[1]$) which allows for a one-point description. 
+		infinitessimal elements $[\,1\,]$ which allows for a one-point description. 
 
 		%\begin{figure}[H]
 		\vspace{2cm}
@@ -174,10 +174,10 @@ Astrophysik, Technische Universität Berlin, Germany}
 		The dynamical evolution of a line element $\va{l}$ is given by
        
        \begin{equation}
-           \frac{d \va{l}}{d t} = \nabla \va{u} \, \va{l} =
+           \frac{d \va{l}}{d t} = \nabla \va{v} \, \va{l} =
            \ta{S} \txv \va{l} + \ta{\Omega} \txv \va{l},
        \end{equation}
-	   where velocity gradient can be split into is the symmetric part $\ta{S}$ (strain-rate tensor) 
+	   where the velocity gradient can be split into is the symmetric part $\ta{S}$ (strain-rate tensor) 
 	   and an antisymmetric part $\ta{\Omega}$(rotation-rate tensor). The line stretching rate $\zeta$ is defined as
 
        \begin{equation}
@@ -273,10 +273,13 @@ Astrophysik, Technische Universität Berlin, Germany}
                 \end{equation}
 
                 represents the orientation of two fields and therefore the
-                coupling strength. In order to simulate this effect on the 
+                coupling strength. In order to better understand the role of the
+                alignment on the 
                 line element stretching, the large scale fields were rotated
                 for different degrees of alignment $\sigma_{\textsf{\small{C}}}
 			   	= H_{\textsf{\small{C}}}/H^{\textsf{\small{max}}}_{\textsf{\small{C}}}$.
+
+                \vspace{1.0cm}
 
 				\begin{figure}[H]
 					\centering
@@ -293,7 +296,6 @@ Astrophysik, Technische Universität Berlin, Germany}
 
                 In case of a strong alignment the dynamical effect also be seen in the
                 Elsässer formulation of the incompressible MHD equations,
-
                 \begin{equation}
                     \begin{aligned}
                     \label{elsasser_eq}
