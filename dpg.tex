@@ -64,7 +64,7 @@
 \usepackage{adjustbox}
 \usepackage{url}
 \usepackage{lipsum}
-%\pdfminorversion=7
+\pdfminorversion=7
 
 %% +++++ Custom Commands ++++++
 % Add your custom commands here
@@ -173,29 +173,30 @@ Astrophysik, Technische Universität Berlin, Germany}
 		%\end{figure}	
 		The dynamical evolution of a line element $\va{l}$ is given by
        
-       \begin{equation*}
+       \begin{equation}
            \frac{d \va{l}}{d t} = \nabla \va{u} \, \va{l} =
            \ta{S} \txv \va{l} + \ta{\Omega} \txv \va{l},
-       \end{equation*}
+       \end{equation}
 	   where velocity gradient can be split into is the symmetric part $\ta{S}$ (strain-rate tensor) 
 	   and an antisymmetric part $\ta{\Omega}$(rotation-rate tensor). The line stretching rate $\zeta$ is defined as
 
-       \begin{equation*}
+       \begin{equation}
+           \label{zeta}
            \zeta \equiv \frac{d \ln(l)}{d t} = S_{ij} \hat{l}_i  \hat{l}_j.
            %\qquad \xi \equiv \frac{d \ln(A)}{d t} = -S_{ij} \hat{n}_i
            %\hat{n}_j, \; \va{A} = \va{l_1} \times \va{l_2}
-       \end{equation*}
+       \end{equation}
 
        In the simulation lagrangian velocity gradient data $\va{V}$ is first gathered for each particle
 	   and then used to evolve the corresponding line elements through the matrix $\va{M}$
 
-        \begin{equation*}
+        \begin{equation}
             \frac{d}{dt} \va{M} = \va{V} \txv \va{M}(t), \qquad \va{M}(0) = \mathbb{1},
-        \end{equation*}
+        \end{equation}
 
-        \begin{equation*}
+        \begin{equation}
             \va{l}(t) = \va{M}(t) \txv \va{l}(0).
-        \end{equation*}
+        \end{equation}
 
 	}
 
@@ -204,7 +205,9 @@ Astrophysik, Technische Universität Berlin, Germany}
         The velocity gradient is obtained by tracking lagrangian particles through
         tricubic interpolation in a direct numerical simulation of the 
         incompressible MHD equations, 
-        \begin{align*}
+
+        \begin{equation}
+        \begin{aligned}
             \partial_t \va{\omega} &= \nabla \times [\va{v} \times \va{\omega}
             - \va{B} \times (\nabla \times \va{B})] + \nu \nabla^{2} \va{\omega}
             + \va{F}_{\va{\omega}}^{f},\\
@@ -212,15 +215,16 @@ Astrophysik, Technische Universität Berlin, Germany}
             \nabla^{2} \va{B}
             + \va{F}_{\va{B}}^{f},\\
              \nabla \cdot \va{v} &= \nabla \cdot \va{B} = 0,
-        \end{align*}
+        \end{aligned}
+        \end{equation}
 
         which are solved using the pseudo spectral method.
         Since the MHD equations are dissipative, a stochastic forcing based on the 
         Ornstein-Uhlenbeck Process, 
-        \begin{equation*}
+        \begin{equation}
             d U(t) = - U(t) \frac{dt}{\tau_{\textrm{corr}}} + \left( \frac{2
             \sigma_f^2}{\tau_{\textrm{corr}}} \right)^{1/2} dW(t).
-        \end{equation*}
+        \end{equation}
         was applied on large scales to keep the system 
         in a stationary state.
 
@@ -263,10 +267,10 @@ Astrophysik, Technische Universität Berlin, Germany}
                 \times \va{b}$ and hence affects its dynamics.
                 The cross helicity given by
 
-                \begin{equation*}
+                \begin{equation}
                     H_{\textsf{\small{C}}} = \int \va{v} \cdot \va{B} \, dV.
                     \label{xhel}
-                \end{equation*}
+                \end{equation}
 
                 represents the orientation of two fields and therefore the
                 coupling strength. In order to simulate this effect on the 
@@ -285,18 +289,22 @@ Astrophysik, Technische Universität Berlin, Germany}
 
             \end{minipage}
             \hfill
-            \begin{minipage}[t]{21cm}
+            \begin{minipage}[t]{20cm}
 
                 In case of a strong alignment the dynamical effect also be seen in the
                 Elsässer formulation of the incompressible MHD equations,
-                \begin{align*}
+
+                \begin{equation}
+                    \begin{aligned}
                     \label{elsasser_eq}
-                    \va{z}^{\pm} &= \va{v} \pm \va{B},\\
-                    \nabla \cdot \va{z}^{\pm} &= 0\\
+                    \va{z}^{\pm} = &\va{v} \pm \va{B},\\
+                    \nabla \cdot \va{z}^{\pm} = &0\\
                     \frac{\partial}{\partial t} \va{z}^{\pm} + (\va{z}^{\mp}\cdot
-                    \nabla)\va{z}^{\pm} &= -\nabla P + \frac{\nu + \lambda}{2}\Delta
-                    \va{z}^{\pm} + \frac{\nu - \lambda}{2}\Delta \va{z}^{\pm},
-                \end{align*}
+                    \nabla)\va{z}^{\pm} = &-\nabla P + \frac{\nu + \lambda}{2}\Delta
+                    \va{z}^{\pm} \\
+                    &+ \frac{\nu - \lambda}{2}\Delta \va{z}^{\pm},
+                    \end{aligned}
+                \end{equation}
 
                 where the non-linear term vanishes for $\va{z}^{\pm} \approx 0$.
                 By reducing the non-linear interaction, the energy injected on
@@ -315,26 +323,44 @@ Astrophysik, Technische Universität Berlin, Germany}
 
                 \subheader{Strechting rates}
 
-                After an initial transition phase, where the line elements
-                orient themself along the maximum positive strain direction
-                the strechting rates settle in a stationary state. The principal 
-                strain directions were calculated from the local strain rate
-                tensor.
-
+                The line element stretching rate was computed for each
+                Lagrangian particle using Equation (\ref{zeta}) and 
+                averaged over the ensemble. Further, the alignement 
+                of the line elements with the principal strain rates was studied
+                by finiding the eigenvectors of the strain rate tensor.
+                
                 \plot{figures/mhd_line_evo}
-                    {caption}
+                    {Temporal evolution of the average line strechting rate and
+                    orienation.}
                     {line_stretching}
+
+                \begin{itemsposter}
+                    \item After an initial transition phase the strechting rates
+                        settle into a stationary state.
+
+                    \vspace{0.5cm}
+
+                    \item In this transition phase the line elements $\va{l}$ show
+                        a strong alignment with the maximum postive strain direction
+                        $\va{T}_1$.
+                \end{itemsposter}
 
                 \subheader{Orientation}
 
-                The probability functions in the stationary state are shown
-                below for different angles between the line elements and the
-                principal strain rates as well as vorticity and magnetic fields.
+                The histograms for different angles between the line elements and the
+                principal strain rates as well as the vorticity and magnetic field in the
+                stationary state are shown below .
 
                 \plot{figures/histograms/mhd_angle_histo_t20}
                     {MHD p.d.fs for the angles between the local magnetic field and the
                     line element orientation at steady state ($t/\tau_{\eta} = 20$).}
                     {mhd_strain_magnetic_angle_histo}
+
+                \begin{itemsposter}
+                    \item In MHD turbulence the line elements show the strongest
+                        alignenment with the magnetic field, followed by the 
+                        vorticity and the max. positive strain rate.
+                \end{itemsposter}
 
 
             \end{minipage}
@@ -342,23 +368,51 @@ Astrophysik, Technische Universität Berlin, Germany}
             \begin{minipage}[t]{20cm}
 
                  \subheader{Statistical distribution}
+                    
+                    The statistical distribution of the line element strechting
+                    rate $\zeta$ was calculated in the stationary state. 
 
                     \plot{figures/histograms/mhd_zeta_histo_t20}
-						{caption}
+						{Probability density functions of $\zeta$ are shown for
+                        different alignments $\langle \sigma \rangle$.}
 						{histo}
+
+                    \begin{itemsposter}
+                        \item The p.d.f of $\zeta $ show
+                              a Gaussian shaped distribution and are stationary.
+
+                        \vspace{0.5cm}
+
+                        \item The kurtosis of the p.d.f increases with an increasing
+                              cross helicity fraction.
+                    \end{itemsposter}
+
 
                  \subheader{Influence of the cross helicity}
 
+                     After aligning $\va{v}$ and $\va{B}$ through cross helictiy
+                     injection, its effect on material line stretching was
+                     investigated by averaging the ensemble line stretching
+                     rate and orientation over time for different alignments $\langle
+                     \sigma_c \rangle $.
+
                     \plot{figures/line_xhel_scaling_128}
-						{caption}
+						{Time averaged stretching rates and angles are shown for
+                        different alignment $\langle \sigma_c \rangle$.}
 						{xhel_scaling}
 
                     \begin{itemsposter}
-                    \item
-                        This is how to create bullet point items.
-                    \item
-                        ...
+                        \item The stretching rate $\bar{\zeta}$ increases with
+                            increasing alignment $\langle \sigma_c \rangle$.
+
+                        \vspace{0.5cm}
+
+                    \item At the same time the angle between $\va{l}$ and
+                        $\va{T}_1$ or $\va{B}$ decreases with
+                            increasing $\langle \sigma_c \rangle$.
+
                     \end{itemsposter}
+
                 
             \end{minipage}
          
