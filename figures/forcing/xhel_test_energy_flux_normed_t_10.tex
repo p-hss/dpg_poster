@@ -71,43 +71,57 @@
       \expandafter\def\csname LT8\endcsname{\color{black}}%
     \fi
   \fi
-  \setlength{\unitlength}{0.0500bp}%
-  \begin{picture}(8640.00,5760.00)%
+    \setlength{\unitlength}{0.0500bp}%
+    \ifx\gptboxheight\undefined%
+      \newlength{\gptboxheight}%
+      \newlength{\gptboxwidth}%
+      \newsavebox{\gptboxtext}%
+    \fi%
+    \setlength{\fboxrule}{0.5pt}%
+    \setlength{\fboxsep}{1pt}%
+\begin{picture}(8640.00,5760.00)%
     \gplgaddtomacro\gplbacktext{%
-      \csname LTb\endcsname%
-      \put(682,704){\makebox(0,0)[r]{\strut{} 0}}%
-      \put(682,1503){\makebox(0,0)[r]{\strut{} 1}}%
-      \put(682,2301){\makebox(0,0)[r]{\strut{} 2}}%
-      \put(682,3100){\makebox(0,0)[r]{\strut{} 3}}%
-      \put(682,3898){\makebox(0,0)[r]{\strut{} 4}}%
-      \put(682,4697){\makebox(0,0)[r]{\strut{} 5}}%
-      \put(682,5495){\makebox(0,0)[r]{\strut{} 6}}%
-      \put(814,484){\makebox(0,0){\strut{} 0}}%
-      \put(1557,484){\makebox(0,0){\strut{} 0.1}}%
-      \put(2300,484){\makebox(0,0){\strut{} 0.2}}%
-      \put(3043,484){\makebox(0,0){\strut{} 0.3}}%
-      \put(3786,484){\makebox(0,0){\strut{} 0.4}}%
-      \put(4529,484){\makebox(0,0){\strut{} 0.5}}%
-      \put(5271,484){\makebox(0,0){\strut{} 0.6}}%
-      \put(6014,484){\makebox(0,0){\strut{} 0.7}}%
-      \put(6757,484){\makebox(0,0){\strut{} 0.8}}%
-      \put(7500,484){\makebox(0,0){\strut{} 0.9}}%
-      \put(8243,484){\makebox(0,0){\strut{} 1}}%
-      \put(176,3099){\rotatebox{-270}{\makebox(0,0){\strut{}Probability density function}}}%
-      \put(4528,154){\makebox(0,0){\strut{}$|\va{\hat{l}} \cdot \va{\hat{x}}| \qquad \va{\hat{x}} = \va{\hat{T}}_i, \, \va{\hat{\omega}}, \, \va{\hat{b}} $}}%
+      \csname LTb\endcsname%%
+      \put(682,1482){\makebox(0,0)[r]{\strut{}$0$}}%
+      \put(682,2158){\makebox(0,0)[r]{\strut{}$2$}}%
+      \put(682,2834){\makebox(0,0)[r]{\strut{}$4$}}%
+      \put(682,3511){\makebox(0,0)[r]{\strut{}$6$}}%
+      \put(682,4187){\makebox(0,0)[r]{\strut{}$8$}}%
+      \put(682,4863){\makebox(0,0)[r]{\strut{}$10$}}%
+      \put(682,5539){\makebox(0,0)[r]{\strut{}$12$}}%
+      \put(814,924){\makebox(0,0){\strut{}1}}%
+      \put(1286,924){\makebox(0,0){\strut{}$5$}}%
+      \put(1875,924){\makebox(0,0){\strut{}$10$}}%
+      \put(2465,924){\makebox(0,0){\strut{}$15$}}%
+      \put(3054,924){\makebox(0,0){\strut{}$20$}}%
+      \put(3644,924){\makebox(0,0){\strut{}$25$}}%
+      \put(4234,924){\makebox(0,0){\strut{}$30$}}%
+      \put(4823,924){\makebox(0,0){\strut{}$35$}}%
+      \put(5413,924){\makebox(0,0){\strut{}$40$}}%
+      \put(6003,924){\makebox(0,0){\strut{}$45$}}%
+      \put(6592,924){\makebox(0,0){\strut{}$50$}}%
+      \put(7182,924){\makebox(0,0){\strut{}$55$}}%
+      \put(7771,924){\makebox(0,0){\strut{}$60$}}%
     }%
     \gplgaddtomacro\gplfronttext{%
-      \csname LTb\endcsname%
-      \put(1801,5322){\makebox(0,0)[l]{\strut{}$|\va{\hat{l}} \cdot \va{\hat{T}}_1|$}}%
-      \csname LTb\endcsname%
-      \put(1801,5102){\makebox(0,0)[l]{\strut{}$|\va{\hat{l}} \cdot \va{\hat{T}}_2|$}}%
-      \csname LTb\endcsname%
-      \put(1801,4882){\makebox(0,0)[l]{\strut{}$|\va{\hat{l}} \cdot \va{\hat{\omega}}|$}}%
-      \csname LTb\endcsname%
-      \put(1801,4662){\makebox(0,0)[l]{\strut{}$|\va{\hat{l}} \cdot \va{\hat{b}}|$}}%
+      \csname LTb\endcsname%%
+      \put(198,3341){\rotatebox{-270}{\makebox(0,0){\strut{}$\Pi / \epsilon$}}}%
+      \put(4528,594){\makebox(0,0){\strut{}$k$}}%
+      \csname LTb\endcsname%%
+      \put(2454,393){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$1.00}}%
+      \csname LTb\endcsname%%
+      \put(2454,173){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$0.98}}%
+      \csname LTb\endcsname%%
+      \put(4893,393){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$0.92}}%
+      \csname LTb\endcsname%%
+      \put(4893,173){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$0.83}}%
+      \csname LTb\endcsname%%
+      \put(7332,393){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$0.62}}%
+      \csname LTb\endcsname%%
+      \put(7332,173){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$0.00}}%
     }%
     \gplbacktext
-    \put(0,0){\includegraphics{figures/histograms/mhd_angle_histo_t20}}%
+    \put(0,0){\includegraphics{figures/forcing/xhel_test_energy_flux_normed_t_10}}%
     \gplfronttext
   \end{picture}%
 \endgroup

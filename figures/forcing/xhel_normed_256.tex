@@ -71,43 +71,51 @@
       \expandafter\def\csname LT8\endcsname{\color{black}}%
     \fi
   \fi
-  \setlength{\unitlength}{0.0500bp}%
-  \begin{picture}(8640.00,5760.00)%
+    \setlength{\unitlength}{0.0500bp}%
+    \ifx\gptboxheight\undefined%
+      \newlength{\gptboxheight}%
+      \newlength{\gptboxwidth}%
+      \newsavebox{\gptboxtext}%
+    \fi%
+    \setlength{\fboxrule}{0.5pt}%
+    \setlength{\fboxsep}{1pt}%
+\begin{picture}(8640.00,5760.00)%
     \gplgaddtomacro\gplbacktext{%
-      \csname LTb\endcsname%
-      \put(682,704){\makebox(0,0)[r]{\strut{} 0}}%
-      \put(682,1503){\makebox(0,0)[r]{\strut{} 1}}%
-      \put(682,2301){\makebox(0,0)[r]{\strut{} 2}}%
-      \put(682,3100){\makebox(0,0)[r]{\strut{} 3}}%
-      \put(682,3898){\makebox(0,0)[r]{\strut{} 4}}%
-      \put(682,4697){\makebox(0,0)[r]{\strut{} 5}}%
-      \put(682,5495){\makebox(0,0)[r]{\strut{} 6}}%
-      \put(814,484){\makebox(0,0){\strut{} 0}}%
-      \put(1557,484){\makebox(0,0){\strut{} 0.1}}%
-      \put(2300,484){\makebox(0,0){\strut{} 0.2}}%
-      \put(3043,484){\makebox(0,0){\strut{} 0.3}}%
-      \put(3786,484){\makebox(0,0){\strut{} 0.4}}%
-      \put(4529,484){\makebox(0,0){\strut{} 0.5}}%
-      \put(5271,484){\makebox(0,0){\strut{} 0.6}}%
-      \put(6014,484){\makebox(0,0){\strut{} 0.7}}%
-      \put(6757,484){\makebox(0,0){\strut{} 0.8}}%
-      \put(7500,484){\makebox(0,0){\strut{} 0.9}}%
-      \put(8243,484){\makebox(0,0){\strut{} 1}}%
-      \put(176,3099){\rotatebox{-270}{\makebox(0,0){\strut{}Probability density function}}}%
-      \put(4528,154){\makebox(0,0){\strut{}$|\va{\hat{l}} \cdot \va{\hat{x}}| \qquad \va{\hat{x}} = \va{\hat{T}}_i, \, \va{\hat{\omega}}, \, \va{\hat{b}} $}}%
+      \csname LTb\endcsname%%
+      \put(946,1144){\makebox(0,0)[r]{\strut{}$-0.2$}}%
+      \put(946,1772){\makebox(0,0)[r]{\strut{}$0$}}%
+      \put(946,2400){\makebox(0,0)[r]{\strut{}$0.2$}}%
+      \put(946,3028){\makebox(0,0)[r]{\strut{}$0.4$}}%
+      \put(946,3655){\makebox(0,0)[r]{\strut{}$0.6$}}%
+      \put(946,4283){\makebox(0,0)[r]{\strut{}$0.8$}}%
+      \put(946,4911){\makebox(0,0)[r]{\strut{}$1$}}%
+      \put(946,5539){\makebox(0,0)[r]{\strut{}$1.2$}}%
+      \put(1078,924){\makebox(0,0){\strut{}$0$}}%
+      \put(2511,924){\makebox(0,0){\strut{}$0.01$}}%
+      \put(3944,924){\makebox(0,0){\strut{}$0.02$}}%
+      \put(5377,924){\makebox(0,0){\strut{}$0.03$}}%
+      \put(6810,924){\makebox(0,0){\strut{}$0.04$}}%
+      \put(8243,924){\makebox(0,0){\strut{}$0.05$}}%
     }%
     \gplgaddtomacro\gplfronttext{%
-      \csname LTb\endcsname%
-      \put(1801,5322){\makebox(0,0)[l]{\strut{}$|\va{\hat{l}} \cdot \va{\hat{T}}_1|$}}%
-      \csname LTb\endcsname%
-      \put(1801,5102){\makebox(0,0)[l]{\strut{}$|\va{\hat{l}} \cdot \va{\hat{T}}_2|$}}%
-      \csname LTb\endcsname%
-      \put(1801,4882){\makebox(0,0)[l]{\strut{}$|\va{\hat{l}} \cdot \va{\hat{\omega}}|$}}%
-      \csname LTb\endcsname%
-      \put(1801,4662){\makebox(0,0)[l]{\strut{}$|\va{\hat{l}} \cdot \va{\hat{b}}|$}}%
+      \csname LTb\endcsname%%
+      \put(198,3341){\rotatebox{-270}{\makebox(0,0){\strut{}$\langle \sigma_c \rangle$}}}%
+      \put(4660,594){\makebox(0,0){\strut{}$t/T_E$}}%
+      \csname LTb\endcsname%%
+      \put(2586,393){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$1.00}}%
+      \csname LTb\endcsname%%
+      \put(2586,173){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$0.98}}%
+      \csname LTb\endcsname%%
+      \put(5025,393){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$0.92}}%
+      \csname LTb\endcsname%%
+      \put(5025,173){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$0.83}}%
+      \csname LTb\endcsname%%
+      \put(7464,393){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$0.62}}%
+      \csname LTb\endcsname%%
+      \put(7464,173){\makebox(0,0)[r]{\strut{} $\sigma_{c, \textsf{f}}=$0.00}}%
     }%
     \gplbacktext
-    \put(0,0){\includegraphics{figures/histograms/mhd_angle_histo_t20}}%
+    \put(0,0){\includegraphics{figures/forcing/xhel_normed_256}}%
     \gplfronttext
   \end{picture}%
 \endgroup

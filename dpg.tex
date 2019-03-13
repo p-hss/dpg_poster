@@ -39,6 +39,7 @@
 \usepackage{changepage}
 %\usepackage[labelformat=empty]{caption}
 \usepackage{caption}
+\usepackage{booktabs}
 %% +++++ Custom Packages End ++++++
 \usepackage{sfmath}  % Sans-serif math font
 \renewcommand{\familydefault}{\sfdefault}
@@ -64,7 +65,7 @@
 \usepackage{adjustbox}
 \usepackage{url}
 \usepackage{lipsum}
-\pdfminorversion=7
+%\pdfminorversion=7
 
 %% +++++ Custom Commands ++++++
 % Add your custom commands here
@@ -79,8 +80,8 @@
 \newcommand{\plot}[3]{
 \begin{figure}[H]
     \centering
-    \scriptsize
-    %\tiny
+    %\scriptsize
+    \tiny
     \scalebox{1.3}{\input{#1}}
     \caption{\footnotesize{#2}}
     \label{#3}
@@ -92,8 +93,7 @@
 
 %% +++++ Title and Author ++++++
 \newcommand{\mytitle}{Statistical properties of material line elements in incompressible MHD turbulence}
-\newcommand{\myauthor}{Philipp Hess, Oliver Henze, Wolf-Christian Müller \\\vspace{1cm} Zentrum für Astronomie und
-Astrophysik, Technische Universität Berlin, Germany}
+\newcommand{\myauthor}{Philipp Hess, Oliver Henze and Wolf-Christian Müller \\\vspace{1.0cm} \Large{AG Plasma-Astrophysik, Zentrum für Astronomie und Astrophysik}, Technische Universität Berlin, Germany}
 		
 %% +++++ Predefined Daedalus Theme ++++++
 \include{tikzposterDaedalus}
@@ -108,14 +108,14 @@ Astrophysik, Technische Universität Berlin, Germany}
 	\begin{columns}%blocks will be placed into columns
 	\column{.4}
 
-       \block{Background}{
-        The deformation of material lines in turbulence is of fundamental interest and
+       \block{Introduction}{
+        The deformation of material lines that are advected by turbulence is of fundamental interest and
         practical importance. Due to its diffusive character material lines
         consisting of the same set of fluid particles tend to stretch while following the
         fluid motion. Vortex lines and magnetic field lines in an inviscid fluid
         of high conductivity are examples of vector fields that are proportional to
-        material lines. It is  known analytically [\,1\,] and shown in hydrodynamic
-        simulations [\,2\,][\,3\,] that the length of material line elements
+        material lines. As known from analytical studies [1] and shown in hydrodynamic
+        simulations [2][3] that the length of material line elements
         increases exponentially in time. In the present work the deformation of
         material lines is studied statistically by simulating infinitesimal
         material line elements 
@@ -128,11 +128,11 @@ Astrophysik, Technische Universität Berlin, Germany}
       }
 
 
-      \block{Material line elements simulation}{
+      \block{Material line elements}{
 
 	  	A material line is defined as a line that always consists of the same set of particles or fluid
 		elements. In order to study the material line dynamics statistically the lines are simplified to 
-		infinitessimal elements $[\,1\,]$ which allows for a one-point description. 
+		infinitesimal elements $[\,1\,]$ which allows for a one-point description. 
 
 		%\begin{figure}[H]
 		\vspace{2cm}
@@ -141,15 +141,15 @@ Astrophysik, Technische Universität Berlin, Germany}
 
             \tikzset{ultra thick/.style={line width=2.8pt}}
 
-            \draw [gray, ultra thick ] plot [smooth, tension=0.9] coordinates {
+            \draw [lightgray, ultra thick ] plot [smooth, tension=0.9] coordinates {
             (-3.8, 0.1) (-3., 0.0) (-1.5, 0.5) (-0.8, -0.0)
             (0.1, -0.6) (1.6, 0.2) (3.0,  0.0) (3.5,  0.2)};
 
 
-            \draw[ultra thick, darkgray,->] (-3. , 0.0) -- (-1.5, 0.5);
-            \draw[ultra thick, darkgray,->] (-1.5, 0.5) -- (-0.8,-0.0);
-            \draw[ultra thick, darkgray,->] (-0.8,-0.0) -- (-0.2,-0.58);
-            \draw[ultra thick, darkgray,->] (-0.2,-0.58) -- (1.6, 0.2);
+            \draw[ultra thick, darkgray,->] (-3. , 0.0) -- (-1.6, 0.5);
+            \draw[ultra thick, darkgray,->] (-1.5, 0.5) -- (-0.9, 0.1);
+            \draw[ultra thick, darkgray,->] (-0.8,-0.0) -- (-0.3,-0.52);
+            \draw[ultra thick, darkgray,->] (-0.2,-0.58) -- (1.5, 0.15);
             \draw[ultra thick, darkgray,->] (1.6, 0.2) -- (2.3, 0.2);
               
             \fill (-3.0, 0.0)  circle[radius=2pt];
@@ -158,14 +158,14 @@ Astrophysik, Technische Universität Berlin, Germany}
             \fill (-0.2,-0.58)  circle[radius=2pt];
             \fill (1.6,0.2)  circle[radius=2pt];
 
-			\node [darkgray] at (-4.0 ,-0.1) {\textbf{L}};
+			\node [lightgray] at (-4.0 ,-0.1) {\textbf{L}};
             \node [black] at (1.1, -0.2) {$\va{l}$};
             \node [black] at (-0.1, -0.2) {$\va{p}$};
   
         \end{tikzpicture}
 		\vspace{1cm}
 		\captionof{figure}{A material line $L$ is approximated by line elements $l$ which are computed for
-        for each lagrangian particle $p$.}
+        for each Lagrangian particle $p$.}
 		\end{center}
 		\vspace{2cm}
 		%\caption{a line} 
@@ -177,8 +177,11 @@ Astrophysik, Technische Universität Berlin, Germany}
            \frac{d \va{l}}{d t} = \nabla \va{v} \, \va{l} =
            \ta{S} \txv \va{l} + \ta{\Omega} \txv \va{l},
        \end{equation}
-	   where the velocity gradient can be split into is the symmetric part $\ta{S}$ (strain-rate tensor) 
-	   and an antisymmetric part $\ta{\Omega}$(rotation-rate tensor). The line stretching rate $\zeta$ is defined as
+
+		\vspace{0.5cm}
+
+	   where the velocity gradient can be split into a symmetric part $\ta{S}$ (strain-rate tensor) 
+	   and an antisymmetric part $\ta{\Omega}$ (rotation-rate tensor). The line stretching rate is defined as
 
        \begin{equation}
            \label{zeta}
@@ -187,7 +190,8 @@ Astrophysik, Technische Universität Berlin, Germany}
            %\hat{n}_j, \; \va{A} = \va{l_1} \times \va{l_2}
        \end{equation}
 
-       In the simulation lagrangian velocity gradient data $\va{V}$ is first gathered for each particle
+		\vspace{0.5cm}
+       In the simulation, Lagrangian velocity gradient data $\va{V}$ is first gathered for each particle
 	   and then used to evolve the corresponding line elements through the matrix $\va{M}$
 
         \begin{equation}
@@ -200,33 +204,39 @@ Astrophysik, Technische Universität Berlin, Germany}
 
 	}
 
-       \block{Forcing Method}{
+       \block{MHD simulation}{
 
-        The velocity gradient is obtained by tracking lagrangian particles through
+        The velocity gradient is obtained by tracking $1.000.192$ Lagrangian particles with 
         tricubic interpolation in a direct numerical simulation of the 
         incompressible MHD equations, 
 
         \begin{equation}
         \begin{aligned}
             \partial_t \va{\omega} &= \nabla \times [\va{v} \times \va{\omega}
-            - \va{B} \times (\nabla \times \va{B})] + \nu \nabla^{2} \va{\omega}
+            - \va{b} \times (\nabla \times \va{b})] + \nu \nabla^{2} \va{\omega}
             + \va{F}_{\va{\omega}}^{f},\\
-            \partial_t \va{B} &= \nabla \times (\va{v} \times \va{B}) + \lambda
-            \nabla^{2} \va{B}
-            + \va{F}_{\va{B}}^{f},\\
-             \nabla \cdot \va{v} &= \nabla \cdot \va{B} = 0,
+            \partial_t \va{b} &= \nabla \times (\va{v} \times \va{b}) + \lambda
+            \nabla^{2} \va{b}
+            + \va{F}_{\va{b}}^{f},\\
+             \nabla \cdot \va{v} &= \nabla \cdot \va{b} = 0,
         \end{aligned}
+		\label{incomp_mhd}
         \end{equation}
 
-        which are solved using the pseudo spectral method.
+		\vspace{0.5cm}
+
+		which are solved using the pseudo spectral method on a $128^{3}$ grid.
         Since the MHD equations are dissipative, a stochastic forcing based on the 
         Ornstein-Uhlenbeck Process, 
         \begin{equation}
             d U(t) = - U(t) \frac{dt}{\tau_{\textrm{corr}}} + \left( \frac{2
             \sigma_f^2}{\tau_{\textrm{corr}}} \right)^{1/2} dW(t).
         \end{equation}
-        was applied on large scales to keep the system 
-        in a stationary state.
+
+		\vspace{0.2cm}
+
+        is applied on large scales to keep the system 
+        in a quasi-stationary state.
 
       }
 
@@ -241,13 +251,13 @@ Astrophysik, Technische Universität Berlin, Germany}
 
             \vspace{0.5cm}
 
-            \item Yeung, P. K.,  Pope, S. B. \textit{Lagrangian statistics from
+            \item Yeung, P. K.,  Pope, S. b. \textit{Lagrangian statistics from
                 direct numerical simulation of isotropic turbulence}. J. Fluid
                 Mech., 207, 531–586, 1989.
 
             \vspace{0.5cm}
 
-            \item Girimaji, S. S., Pope, S. B. \textit{Material-element deformation
+            \item Girimaji, S. S., Pope, S. b. \textit{Material-element deformation
                 in isotropic turbulence}. J. Fluid Mech., 220, 427-458, 1990. 
 
 
@@ -262,58 +272,37 @@ Astrophysik, Technische Universität Berlin, Germany}
 		\block{Cross helicity injection}{
             \begin{minipage}[t]{20cm}
 
-			    In MHD turbulence the magnetic field $\va{b}$ is coupled to the velocity
-                field $\va{v}$ through the Lorentz force $F \propto \va{v}
-                \times \va{b}$ and hence affects its dynamics.
-                The cross helicity given by
+				As can be seen form the incompressible MHD equations \eqref{incomp_mhd}, the magnetic and the 
+				velocity field couple through the Lorentz force term $\va{v}\times\va{b}$. Therefore the 
+				coupling strength depends on the alignment of the two fields. 
+				A measure of the orientation is defined by the cross helicity given by
 
                 \begin{equation}
-                    H_{\textsf{\small{C}}} = \int \va{v} \cdot \va{B} \, dV.
+                    H_{\textsf{\small{C}}} = \int \va{v} \cdot \va{b} \, dV.
                     \label{xhel}
                 \end{equation}
 
-                represents the orientation of two fields and therefore the
-                coupling strength. In order to better understand the role of the
-                alignment on the 
-                line element stretching, the large scale fields were rotated
-                for different degrees of alignment $\sigma_{\textsf{\small{C}}}
-			   	= H_{\textsf{\small{C}}}/H^{\textsf{\small{max}}}_{\textsf{\small{C}}}$.
-
-                \vspace{1.0cm}
-
-				\begin{figure}[H]
-					\centering
-					\scriptsize
-					\scalebox{1.30}{\input{figures/forcing/xhel_normed_128}}
-					\caption{\footnotesize{The average alignment over time is shown for different
-                    forcing parameters $\sigma_{c,f}$.}}
-					\label{test_normed_xhelicity_128}
-				\end{figure}
+				\plot{figures/forcing/xhel_normed_128}
+					{The average alignment of $\va{v}$ and $\va{b}$ over time is shown for different
+                    forcing parameters $\sigma_{c,f}$.}
+					{test_normed_xhelicity_128}
 
             \end{minipage}
             \hfill
             \begin{minipage}[t]{20cm}
 
-                In case of a strong alignment the dynamical effect also be seen in the
-                Elsässer formulation of the incompressible MHD equations,
-                \begin{equation}
-                    \begin{aligned}
-                    \label{elsasser_eq}
-                    \va{z}^{\pm} = &\va{v} \pm \va{B},\\
-                    \nabla \cdot \va{z}^{\pm} = &0\\
-                    \frac{\partial}{\partial t} \va{z}^{\pm} + (\va{z}^{\mp}\cdot
-                    \nabla)\va{z}^{\pm} = &-\nabla P + \frac{\nu + \lambda}{2}\Delta
-                    \va{z}^{\pm} \\
-                    &+ \frac{\nu - \lambda}{2}\Delta \va{z}^{\pm},
-                    \end{aligned}
-                \end{equation}
+                In this work cross helicity was injected by
+			    rotating the large scale forcing fields for different degrees of alignment $\sigma_{\textsf{\small{C}}}
+			   	= H_{\textsf{\small{C}}}/H^{\textsf{\small{max}}}_{\textsf{\small{C}}}$. One of the main characteristics
+				 of turbulence is the energy transport from
+				large to small length scales, which is 
+				also reduced by an increasing alignment. 
 
-                where the non-linear term vanishes for $\va{z}^{\pm} \approx 0$.
-                By reducing the non-linear interaction, the energy injected on
-                large scales is transport less effienctly to smaller scales.
+				\vspace{1.5cm}
 
 				\plot{figures/forcing/xhel_test_energy_flux_normed_t_05}
-				{MHD stochastic forcing, dependency of energy dissipation evolution on cross helicity on .}
+				{The spectral kinetic energy flux over the energy dissipation rate is shown for
+				different alignment forcings.}
 				{xhel_energy_dissipation_128}
 
             \end{minipage}
@@ -323,84 +312,64 @@ Astrophysik, Technische Universität Berlin, Germany}
 
             \begin{minipage}[t]{20cm}
 
-                \subheader{Strechting rates}
+                \subheader{Stretching rates}
 
                 The line element stretching rate was computed for each
-                Lagrangian particle using Equation (\ref{zeta}) and 
-                averaged over the ensemble. Further, the alignement 
+                Lagrangian particle using \eqref{zeta} and 
+                averaged over the ensemble. Further, the alignment 
                 of the line elements with the principal strain rates was studied
-                by finiding the eigenvectors of the strain rate tensor.
-                
+                by finding the eigenvectors of the strain rate tensor.
+               
                 \plot{figures/mhd_line_evo}
-                    {Temporal evolution of the average line strechting rate and
-                    orienation.}
+                    {Temporal evolution of the average line stretching rate and
+                    angle with the maximum strain rate direction $\va{T}_1$.}
                     {line_stretching}
 
                 \begin{itemsposter}
-                    \item After an initial transition phase the strechting rates
-                        settle into a stationary state.
+                    \item After an initial transition phase the stretching rates
+                        settle into a quasi-stationary state.
 
                     \vspace{0.5cm}
 
                     \item In this transition phase the line elements $\va{l}$ show
-                        a strong alignment with the maximum postive strain direction
+                        a strong alignment with the maximum positive strain direction
                         $\va{T}_1$.
                 \end{itemsposter}
+
+				\vspace{1.0cm}
 
                 \subheader{Orientation}
 
                 The histograms for different angles between the line elements and the
                 principal strain rates as well as the vorticity and magnetic field in the
-                stationary state are shown below .
+                stationary state are shown below.
 
                 \plot{figures/histograms/mhd_angle_histo_t20}
-                    {MHD p.d.fs for the angles between the local magnetic field and the
-                    line element orientation at steady state ($t/\tau_{\eta} = 20$).}
+				{MHD p.d.fs for the angles between the local magnetic and voriticity field direction $\va{\hat{b}}$ and the
+                    line element orientation $\va{\hat{l}}$ at steady state ($t/\tau_{\eta} = 20$).}
                     {mhd_strain_magnetic_angle_histo}
 
                 \begin{itemsposter}
                     \item In MHD turbulence the line elements show the strongest
-                        alignenment with the magnetic field, followed by the 
-                        vorticity and the max. positive strain rate.
+                        alignment with the magnetic field, followed by the 
+                        maximum positive strain rate direction and the vorticity.
                 \end{itemsposter}
-
 
             \end{minipage}
             \hfill
             \begin{minipage}[t]{20cm}
 
-                 \subheader{Statistical distribution}
-                    
-                    The statistical distribution of the line element strechting
-                    rate $\zeta$ was calculated in the stationary state. 
-
-                    \plot{figures/histograms/mhd_zeta_histo_t20}
-						{Probability density functions of $\zeta$ are shown for
-                        different alignments $\langle \sigma \rangle$.}
-						{histo}
-
-                    \begin{itemsposter}
-                        \item The p.d.f of $\zeta $ show
-                              a Gaussian shaped distribution and are stationary.
-
-                        \vspace{0.5cm}
-
-                        \item The kurtosis of the p.d.f increases with an increasing
-                              cross helicity fraction.
-                    \end{itemsposter}
-
-
                  \subheader{Influence of the cross helicity}
 
-                     After aligning $\va{v}$ and $\va{B}$ through cross helictiy
-                     injection, its effect on material line stretching was
-                     investigated by averaging the ensemble line stretching
-                     rate and orientation over time for different alignments $\langle
+                     After aligning $\va{v}$ and $\va{b}$ through cross helictiy
+                     injection, its effect on material line deformation was
+                     studied by averaging the ensemble line stretching
+                     rate and angle over time for different alignments $\langle
                      \sigma_c \rangle $.
 
                     \plot{figures/line_xhel_scaling_128}
 						{Time averaged stretching rates and angles are shown for
-                        different alignment $\langle \sigma_c \rangle$.}
+                        different alignments $\langle \sigma_c \rangle$.}
 						{xhel_scaling}
 
                     \begin{itemsposter}
@@ -410,10 +379,53 @@ Astrophysik, Technische Universität Berlin, Germany}
                         \vspace{0.5cm}
 
                     \item At the same time the angle between $\va{l}$ and
-                        $\va{T}_1$ or $\va{B}$ decreases with
+                        $\va{T}_1$ or $\va{b}$ decreases with
                             increasing $\langle \sigma_c \rangle$.
 
                     \end{itemsposter}
+
+					\begin{table}[H]
+					\centering
+						\scriptsize
+						\begin{tabularx}{0.9\textwidth}{C{1}C{1}C{1}C{1}C{1}C{1}C{1}}
+						\toprule
+						    $\sigma_{c, f}$ & $\overline{\zeta}$ & $\varepsilon(\overline{\zeta})$ &
+							$\sphericalangle(\va{l},\va{T}_1)$ & $\varepsilon(\sphericalangle(\va{l},\va{T}_1))$ &
+							$\sphericalangle(\va{l},\va{b})$ & $\varepsilon(\sphericalangle(\va{l},\va{b}))$\\
+						\midrule
+							1    & 0.123 & 3.992E-3 & 0.840  &  6.152E-3 & 0.702  &8.434E-3  \\
+							0.98 & 0.111 & 1.732E-3 & 0.852 &   5.674E-3&  0.752 & 7.673E-3 \\
+							0.96 & 0.106 & 2.547E-3 & 0.861 &   6.557E-3&  0.772 & 8.621E-3 \\
+							0.92 & 0.100 & 2.196E-3 & 0.868 &   7.309E-3&  0.803 & 1.057E-2 \\
+							0.88 & 0.100 & 2.439E-3 & 0.871 &   6.272E-3&  0.815 & 1.008E-2 \\
+							0.83 & 0.096 & 3.169E-3 & 0.878 &   6.657E-3&  0.828 & 9.117E-3 \\
+						\toprule                                           
+						\end{tabularx}
+					\caption{\footnotesize{Time averaged stretching rates and the respective errors 
+											are shown for different alignments.}}
+					\end{table}
+
+					%\vspace{1.5cm}
+                 \subheader{Statistical distribution}
+                    
+                    The statistical distribution of the line element stretching
+                    rate was calculated in the stationary state. 
+
+                    \plot{figures/histograms/mhd_zeta_histo_t20}
+						{Probability density functions of $\zeta$ are shown for
+						forcing parameters $\sigma_{c,f}$.}
+						{histo}
+
+                    \begin{itemsposter}
+                        \item The p.d.fs of $\zeta $ show
+                              a Gaussian shaped distribution and are stationary.
+
+                        \vspace{0.5cm}
+
+                        \item The kurtosis of the p.d.f decreases with an increasing
+                              cross helicity fraction.
+                    \end{itemsposter}
+
 
                 
             \end{minipage}
