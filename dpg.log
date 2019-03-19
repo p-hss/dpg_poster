@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.22)  13 MAR 2019 19:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.22)  14 MAR 2019 15:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1632,19 +1632,12 @@ Package epstopdf Info: Source file: <figures/histograms/mhd_angle_histo_t20.eps
 (epstopdf)                    size: 18499 bytes
 (epstopdf)             Output file: <figures/histograms/mhd_angle_histo_t20-eps
 -converted-to.pdf>
-(epstopdf)                    date: 2019-03-13 19:12:18
+(epstopdf)                    date: 2019-03-13 19:14:22
 (epstopdf)                    size: 3689 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/histograms/mhd_ang
 le_histo_t20-eps-converted-to.pdf figures/histograms/mhd_angle_histo_t20.eps>
 (epstopdf)             \includegraphics on input line 110.
-runsystem(repstopdf --outfile=figures/histograms/mhd_angle_histo_t20-eps-conver
-ted-to.pdf figures/histograms/mhd_angle_histo_t20.eps)...executed safely (allow
-ed).
-
-Package epstopdf Info: Result file: <figures/histograms/mhd_angle_histo_t20-eps
--converted-to.pdf>
-(epstopdf)                    date: 2019-03-13 19:14:22
-(epstopdf)                    size: 3689 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./figures/histograms/mhd_angle_histo_t20-eps-con
@@ -1730,7 +1723,7 @@ erted-to.pdf> <./figures/line_xhel_scaling_128-eps-converted-to.pdf> <./figures
 Here is how much of TeX's memory you used:
  23382 strings out of 494318
  461570 string characters out of 6168872
- 720867 words of memory out of 5000000
+ 720955 words of memory out of 5000000
  26058 multiletter control sequences out of 15000+600000
  78767 words of font info for 190 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
@@ -1757,7 +1750,7 @@ fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts
 lic/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msam10.pfb>
-Output written on dpg.pdf (1 page, 330664 bytes).
+Output written on dpg.pdf (1 page, 330685 bytes).
 PDF statistics:
  144 PDF objects out of 1000 (max. 8388607)
  95 compressed objects within 1 object stream

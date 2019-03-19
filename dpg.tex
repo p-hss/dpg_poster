@@ -115,7 +115,7 @@
         fluid motion. Vortex lines and magnetic field lines in an inviscid fluid
         of high conductivity are examples of vector fields that are proportional to
         material lines. As known from analytical studies [1] and shown in hydrodynamic
-        simulations [2][3] that the length of material line elements
+        simulations [2][3] the length of material line elements
         increases exponentially in time. In the present work the deformation of
         material lines is studied statistically by simulating infinitesimal
         material line elements 
@@ -132,7 +132,7 @@
 
 	  	A material line is defined as a line that always consists of the same set of particles or fluid
 		elements. In order to study the material line dynamics statistically the lines are simplified to 
-		infinitesimal elements $[\,1\,]$ which allows for a one-point description. 
+		infinitesimal elements $[1]$ which allows for an one-point description. 
 
 		%\begin{figure}[H]
 		\vspace{2cm}
@@ -206,7 +206,7 @@
 
        \block{MHD simulation}{
 
-        The velocity gradient is obtained by tracking $1.000.192$ Lagrangian particles with 
+	   The velocity gradient is obtained by tracking $10^{6}$ Lagrangian particles with 
         tricubic interpolation in a direct numerical simulation of the 
         incompressible MHD equations, 
 
@@ -272,13 +272,13 @@
 		\block{Cross helicity injection}{
             \begin{minipage}[t]{20cm}
 
-				As can be seen form the incompressible MHD equations \eqref{incomp_mhd}, the magnetic and the 
-				velocity field couple through the Lorentz force term $\va{v}\times\va{b}$. Therefore the 
+				As can be seen from the incompressible MHD equations \eqref{incomp_mhd}, the magnetic and the 
+				velocity field couple through the $\va{v}\times\va{b}$ term. Therefore the 
 				coupling strength depends on the alignment of the two fields. 
 				A measure of the orientation is defined by the cross helicity given by
 
                 \begin{equation}
-                    H_{\textsf{\small{C}}} = \int \va{v} \cdot \va{b} \, dV.
+					H_{\textsf{\small{C}}} = \frac{1}{2V}\int \va{v} \cdot \va{b} \, dV.
                     \label{xhel}
                 \end{equation}
 
@@ -361,7 +361,7 @@
 
                  \subheader{Influence of the cross helicity}
 
-                     After aligning $\va{v}$ and $\va{b}$ through cross helictiy
+                     After aligning $\va{v}$ and $\va{b}$ through cross helicitiy
                      injection, its effect on material line deformation was
                      studied by averaging the ensemble line stretching
                      rate and angle over time for different alignments $\langle
@@ -418,7 +418,8 @@
 
                     \begin{itemsposter}
                         \item The p.d.fs of $\zeta $ show
-                              a Gaussian shaped distribution and are stationary.
+                              a Gaussian shaped distribution for the maximal 
+							 alignment and are stationary.
 
                         \vspace{0.5cm}
 
