@@ -14,6 +14,8 @@
 % \renewcommand{\huge}{\fontsize{96}{115}\selectfont}
 % \renewcommand{\Huge}{\fontsize{80}{96}\selectfont}
 
+% \newcommand{\philsfontsize}{\fontsize{26}{31.2}\selectfont}
+
 %% +++++ Packages ++++++
 % Writing and font related
 \usepackage[utf8]{inputenc} % encoding
@@ -65,7 +67,7 @@
 \usepackage{adjustbox}
 \usepackage{url}
 \usepackage{lipsum}
-%\pdfminorversion=7
+\pdfminorversion=7
 
 %% +++++ Custom Commands ++++++
 % Add your custom commands here
@@ -109,13 +111,14 @@
 	\column{.4}
 
        \block{Introduction}{
+        
         The deformation of material lines that are advected by turbulence is of fundamental interest and
         practical importance. Due to its diffusive character material lines
         consisting of the same set of fluid particles tend to stretch while following the
         fluid motion. Vortex lines and magnetic field lines in an inviscid fluid
         of high conductivity are examples of vector fields that are proportional to
         material lines. As known from analytical studies [1] and shown in hydrodynamic
-        simulations [2][3] the length of material line elements
+        simulations [2] the length of material line elements
         increases exponentially in time. In the present work the deformation of
         material lines is studied statistically by simulating infinitesimal
         material line elements 
@@ -132,7 +135,7 @@
 
 	  	A material line is defined as a line that always consists of the same set of particles or fluid
 		elements. In order to study the material line dynamics statistically the lines are simplified to 
-		infinitesimal elements $[1]$ which allows for an one-point description. 
+        infinitesimal elements [1] which allows for an one-point description.
 
 		%\begin{figure}[H]
 		\vspace{2cm}
@@ -167,7 +170,7 @@
 		\captionof{figure}{A material line $L$ is approximated by line elements $l$ which are computed for
         for each Lagrangian particle $p$.}
 		\end{center}
-		\vspace{2cm}
+		\vspace{0.5cm}
 		%\caption{a line} 
 		%\label{fig:line}
 		%\end{figure}	
@@ -223,9 +226,9 @@
 		\label{incomp_mhd}
         \end{equation}
 
-		\vspace{0.5cm}
+		\vspace{0.3cm}
 
-		which are solved using the pseudo spectral method on a $128^{3}$ grid.
+		which are solved using the pseudo spectral method on a $256^{3}$ grid.
         Since the MHD equations are dissipative, a stochastic forcing based on the 
         Ornstein-Uhlenbeck Process, 
         \begin{equation}
@@ -242,20 +245,10 @@
 
 		\block{References}{
             \smaller[2]{
-			
 			\begin{enumerate}[label=\lbrack\arabic*\rbrack \ ]		
-
             \item Batchelor, G. K. \textit{The effect of homogeneous turbulence
                 on material lines and surfaces.} Proc. R. Soc. Lond. A, 213(1114),
                  349-366, 1952.
-
-            \vspace{0.5cm}
-
-            \item Yeung, P. K.,  Pope, S. b. \textit{Lagrangian statistics from
-                direct numerical simulation of isotropic turbulence}. J. Fluid
-                Mech., 207, 531–586, 1989.
-
-            \vspace{0.5cm}
 
             \item Girimaji, S. S., Pope, S. b. \textit{Material-element deformation
                 in isotropic turbulence}. J. Fluid Mech., 220, 427-458, 1990. 
@@ -272,6 +265,7 @@
 		\block{Cross helicity injection}{
             \begin{minipage}[t]{20cm}
 
+                \vspace{1.0cm}
 				As can be seen from the incompressible MHD equations \eqref{incomp_mhd}, the magnetic and the 
 				velocity field couple through the $\va{v}\times\va{b}$ term. Therefore the 
 				coupling strength depends on the alignment of the two fields. 
@@ -282,15 +276,6 @@
                     \label{xhel}
                 \end{equation}
 
-				\plot{figures/forcing/xhel_normed_128}
-					{The average alignment of $\va{v}$ and $\va{b}$ over time is shown for different
-                    forcing parameters $\sigma_{c,f}$.}
-					{test_normed_xhelicity_128}
-
-            \end{minipage}
-            \hfill
-            \begin{minipage}[t]{20cm}
-
                 In this work cross helicity was injected by
 			    rotating the large scale forcing fields for different degrees of alignment $\sigma_{\textsf{\small{C}}}
 			   	= H_{\textsf{\small{C}}}/H^{\textsf{\small{max}}}_{\textsf{\small{C}}}$. One of the main characteristics
@@ -298,12 +283,28 @@
 				large to small length scales, which is 
 				also reduced by an increasing alignment. 
 
-				\vspace{1.5cm}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{20cm}
+				%\plot{figures/forcing/xhel_normed_256}
+				%	{The average alignment of $\va{v}$ and $\va{b}$ over time is shown for different
+                %    forcing parameters $\sigma_{c,f}$.}
+				%	{test_normed_xhelicity_256}
 
-				\plot{figures/forcing/xhel_test_energy_flux_normed_t_05}
-				{The spectral kinetic energy flux over the energy dissipation rate is shown for
-				different alignment forcings.}
-				{xhel_energy_dissipation_128}
+            \begin{figure}[H]
+                \centering
+                %\scriptsize
+                \tiny
+                \scalebox{1.273}{\input{figures/forcing/xhel_normed_256}}
+                \caption{\footnotesize{The average alignment of $\va{v}$ and $\va{b}$ over time is shown for different
+                    forcing parameters $\sigma_{c,f}$.}}
+                \label{test_normed_xhelicity_256}
+            \end{figure}
+				%\vspace{1.5cm} 
+				%\plot{figures/forcing/xhel_test_energy_flux_normed_t_05}
+				%{The spectral kinetic energy flux over the energy dissipation rate is shown for
+				%different alignment forcings.}
+				%{xhel_energy_dissipation_128}
 
             \end{minipage}
        }
@@ -314,12 +315,17 @@
 
                 \subheader{Stretching rates}
 
+                \vspace{0.7cm}
+
                 The line element stretching rate was computed for each
                 Lagrangian particle using \eqref{zeta} and 
                 averaged over the ensemble. Further, the alignment 
                 of the line elements with the principal strain rates was studied
                 by finding the eigenvectors of the strain rate tensor.
                
+
+                \vspace{0.7cm}
+
                 \plot{figures/mhd_line_evo}
                     {Temporal evolution of the average line stretching rate and
                     angle with the maximum strain rate direction $\va{T}_1$.}
@@ -329,20 +335,83 @@
                     \item After an initial transition phase the stretching rates
                         settle into a quasi-stationary state.
 
-                    \vspace{0.5cm}
+                    \vspace{0.7cm}
 
                     \item In this transition phase the line elements $\va{l}$ show
                         a strong alignment with the maximum positive strain direction
                         $\va{T}_1$.
                 \end{itemsposter}
 
-				\vspace{1.0cm}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[t]{20cm}
+
+                 \subheader{Influence of the cross helicity}
+                    \vspace{0.7cm}
+
+                     After aligning $\va{v}$ and $\va{b}$ through cross helicitiy
+                     injection, its effect on material line deformation was
+                     studied by averaging the ensemble line stretching
+                     rate and angle over time for different alignments $\langle
+                     \sigma_c \rangle $.
+
+                    \vspace{0.7cm}
+
+                    \plot{figures/line_xhel_scaling_256}
+						{Time averaged stretching rates and angles are shown for
+                        different alignments $\langle \sigma_c \rangle$.}
+						{xhel_scaling}
+
+
+                    \begin{itemsposter}
+                        \item The stretching rate $\bar{\zeta}$ increases with
+                            increasing alignment $\langle \sigma_c \rangle$.
+
+            %            \vspace{0.5cm}
+
+            %        \item At the same time the angle between $\va{l}$ and
+            %            $\va{T}_1$ or $\va{b}$ decreases with
+            %                increasing $\langle \sigma_c \rangle$.
+
+                    \end{itemsposter}
+
+            \begin{table}[H]
+            \centering
+                \scriptsize
+                %\small
+                \begin{tabularx}{0.9\textwidth}{C{1}C{1}C{1}C{1}C{1}C{1}C{1}}
+                \toprule
+                    $\sigma_{c, f}$ & $\overline{\zeta}$ & $\varepsilon(\overline{\zeta})$ &
+                    $\sphericalangle(\va{l},\va{T}_1)$ & $\varepsilon(\sphericalangle(\va{l},\va{T}_1))$ &
+                    $\sphericalangle(\va{l},\va{b})$ & $\varepsilon(\sphericalangle(\va{l},\va{b}))$\\
+                \midrule
+                    1    & 0.118 & 1.778E-3 & 0.831 & 4.156E-3& 0.705 & 1.113E-2  \\
+                    0.98 & 0.116 & 1.106E-3 & 0.848 & 3.712E-3& 0.744 & 5.822E-3 \\
+                    0.92 & 0.109 & 2.211E-3 & 0.878 & 5.529E-3& 0.772 & 8.621E-3 \\
+                    0.83 & 0.100 & 3.683E-3 & 0.886 & 4.492E-3& 0.821 & 8.646E-3 \\
+                    0.62 & 0.098 & 1.586E-3 & 0.902 & 4.982E-3& 0.842 & 6.982E-3 \\
+                    0    & 0.099 & 2.226E-3 & 0.910 & 4.365E-3& 0.852 & 7.555E-3\\
+                \toprule                                           
+                \end{tabularx}
+            \caption{\footnotesize{Time averaged stretching rates and the respective errors 
+                                    are shown for different alignments.}}
+            \end{table}
+
+            \end{minipage}
+
+            \begin{minipage}[t]{20cm}
+
+                \vspace{2.5cm}
 
                 \subheader{Orientation}
+
+                \vspace{0.7cm}
 
                 The histograms for different angles between the line elements and the
                 principal strain rates as well as the vorticity and magnetic field in the
                 stationary state are shown below.
+
+                \vspace{0.7cm}
 
                 \plot{figures/histograms/mhd_angle_histo_t20}
 				{MHD p.d.fs for the angles between the local magnetic and voriticity field direction $\va{\hat{b}}$ and the
@@ -353,84 +422,42 @@
                     \item In MHD turbulence the line elements show the strongest
                         alignment with the magnetic field, followed by the 
                         maximum positive strain rate direction and the vorticity.
+
                 \end{itemsposter}
+                \vspace{1.0cm}
 
             \end{minipage}
             \hfill
             \begin{minipage}[t]{20cm}
 
-                 \subheader{Influence of the cross helicity}
-
-                     After aligning $\va{v}$ and $\va{b}$ through cross helicitiy
-                     injection, its effect on material line deformation was
-                     studied by averaging the ensemble line stretching
-                     rate and angle over time for different alignments $\langle
-                     \sigma_c \rangle $.
-
-                    \plot{figures/line_xhel_scaling_128}
-						{Time averaged stretching rates and angles are shown for
-                        different alignments $\langle \sigma_c \rangle$.}
-						{xhel_scaling}
-
-                    \begin{itemsposter}
-                        \item The stretching rate $\bar{\zeta}$ increases with
-                            increasing alignment $\langle \sigma_c \rangle$.
-
-                        \vspace{0.5cm}
-
-                    \item At the same time the angle between $\va{l}$ and
-                        $\va{T}_1$ or $\va{b}$ decreases with
-                            increasing $\langle \sigma_c \rangle$.
-
-                    \end{itemsposter}
-
-					\begin{table}[H]
-					\centering
-						\scriptsize
-						\begin{tabularx}{0.9\textwidth}{C{1}C{1}C{1}C{1}C{1}C{1}C{1}}
-						\toprule
-						    $\sigma_{c, f}$ & $\overline{\zeta}$ & $\varepsilon(\overline{\zeta})$ &
-							$\sphericalangle(\va{l},\va{T}_1)$ & $\varepsilon(\sphericalangle(\va{l},\va{T}_1))$ &
-							$\sphericalangle(\va{l},\va{b})$ & $\varepsilon(\sphericalangle(\va{l},\va{b}))$\\
-						\midrule
-							1    & 0.123 & 3.992E-3 & 0.840  &  6.152E-3 & 0.702  &8.434E-3  \\
-							0.98 & 0.111 & 1.732E-3 & 0.852 &   5.674E-3&  0.752 & 7.673E-3 \\
-							0.96 & 0.106 & 2.547E-3 & 0.861 &   6.557E-3&  0.772 & 8.621E-3 \\
-							0.92 & 0.100 & 2.196E-3 & 0.868 &   7.309E-3&  0.803 & 1.057E-2 \\
-							0.88 & 0.100 & 2.439E-3 & 0.871 &   6.272E-3&  0.815 & 1.008E-2 \\
-							0.83 & 0.096 & 3.169E-3 & 0.878 &   6.657E-3&  0.828 & 9.117E-3 \\
-						\toprule                                           
-						\end{tabularx}
-					\caption{\footnotesize{Time averaged stretching rates and the respective errors 
-											are shown for different alignments.}}
-					\end{table}
-
-					%\vspace{1.5cm}
+                \vspace{2.5cm}
                  \subheader{Statistical distribution}
+                    \vspace{0.7cm}
                     
                     The statistical distribution of the line element stretching
-                    rate was calculated in the stationary state. 
+                    rate was calculated in the quasi-stationary state. The
+                    centered p.d.fs are shown below.
 
-                    \plot{figures/histograms/mhd_zeta_histo_t20}
+                    \vspace{0.7cm}
+
+                    \plot{figures/histograms/mhd_zeta_histo_t20_256}
 						{Probability density functions of $\zeta$ are shown for
 						forcing parameters $\sigma_{c,f}$.}
 						{histo}
 
                     \begin{itemsposter}
                         \item The p.d.fs of $\zeta $ show
-                              a Gaussian shaped distribution for the maximal 
-							 alignment and are stationary.
+                              a Gaussian shaped distribution close to the mean
+                              stretching rate and are stationary.
 
                         \vspace{0.5cm}
 
-                        \item The kurtosis of the p.d.f decreases with an increasing
-                              cross helicity fraction.
+                        \item The kurtosis of the p.d.f increases with a decreasing
+                            cross helicity fraction $\sigma_{c, f}$.
                     \end{itemsposter}
-
-
                 
+                    \vspace{1.0cm}
             \end{minipage}
-         
         }
 	
 	\end{columns}
